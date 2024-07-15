@@ -136,12 +136,12 @@
 
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="sliders/create.php" class="menu-link">
+                    <a href="users/create.php" class="menu-link">
                         <div data-i18n="Without menu">Add User</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="sliders/index.php" class="menu-link">
+                    <a href="users/index.php" class="menu-link">
                         <div data-i18n="Without navbar">Manage User</div>
                     </a>
                 </li>
@@ -177,13 +177,92 @@
 
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="sliders/create.php" class="menu-link">
+                    <a href="facts/create.php" class="menu-link">
                         <div data-i18n="Without menu">Add Hero</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="sliders/index.php" class="menu-link">
+                    <a href="facts/index.php" class="menu-link">
                         <div data-i18n="Without navbar">Manage Hero</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- Facts Section -->
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div data-i18n="Layouts">Facts</div>
+            </a>
+
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="facts/create.php" class="menu-link">
+                        <div data-i18n="Without menu">Add facts</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="facts/index.php" class="menu-link">
+                        <div data-i18n="Without navbar">Manage Facts</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- setting Section -->
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div data-i18n="Layouts">Setting</div>
+            </a>
+
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="setting/create.php" class="menu-link">
+                        <div data-i18n="Without menu">Add Setting</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="setting/index.php" class="menu-link">
+                        <div data-i18n="Without navbar">Manage Setting</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- contact Section -->
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div data-i18n="Layouts">Contact</div>
+            </a>
+
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="contact/create.php" class="menu-link">
+                        <div data-i18n="Without menu">Add Contact</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="contact/index.php" class="menu-link">
+                        <div data-i18n="Without navbar">Manage Contact</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div data-i18n="Layouts">Setting</div>
+            </a>
+
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="Setting/create.php" class="menu-link">
+                        <div data-i18n="Without menu">Add Setting</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="Setting/index.php" class="menu-link">
+                        <div data-i18n="Without navbar">Manage Setting</div>
                     </a>
                 </li>
             </ul>
