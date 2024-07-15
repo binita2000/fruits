@@ -41,19 +41,22 @@
                                         if (isset($_GET['id'])) {
                                             $id = $_GET['id'];
 
-                                            $sql = "SELECT * FROM contacts WHERE id=$id";
+                                            $sql = "SELECT * FROM users WHERE id=$id";
                                             $result = mysqli_query($conn, $sql);
                                             $row = mysqli_fetch_assoc($result);
                                         }
                                         if (isset($_POST['save'])) {
 
                                             $name = $_POST['name'];
+                                            $username = $_POST['username'];
+                                            $phone = $_POST['phone'];
                                             $email = $_POST['email'];
-                                            $message = $_POST['message'];
+                                            $password = $_POST['password'];
+                                            $role = $_POST['role'];
                                             $status = $_POST['status'];
 
-                                            if ($name != "" && $email != "" && $message != "" && $status != "") {
-                                                $insert = "UPDATE contacts SET name='$name', email='$email', message='$message', status='$status' WHERE id=$id";
+                                            if ($name != "" && $email != "" && $username != "" && $phone != "" && $email != "" && $password != "" && $role != "" && $status != "") {
+                                                $insert = "UPDATE users SET name='$name', phone='$phone', email='$email', password='$password' role='$role', status='$status' WHERE id=$id";
                                                 $result = mysqli_query($conn, $insert);
                                                 if ($result) {
                                                     echo "<div class='alert alert-success'>Data is Updated</div>";
@@ -70,59 +73,84 @@
                                             // Redirect after 0 seconds
                                         }
                                         ?>
-                                        <form class="row" method="POST" enctype="multipart/form-data" action="#">
-                                            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class=" col-form-label" for="basic-icon-default-fullname">Name</label>
-                                                <div class="col-sm-10">
-                                                    <div class="input-group input-group-merge">
-                                                        <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-user"></i></span>
-                                                        <input type="text" name="name" value="<?php echo  $row['name'] ?>" class="form-control" id="basic-icon-default-fullname" placeholder="enter your name" aria-label="enter your name" aria-describedby="basic-icon-default-fullname2" />
-                                                    </div>
-                                                </div>
+    <form class="row" method="POST" enctype="multipart/form-data" action="">
+    <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+        <label class="col-form-label" for="basic-icon-default-fullname">Name</label>
+        <div class="col-sm-10">
+            <div class="input-group input-group-merge">
+                <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-user"></i></span>
+                <input type="text" name="name" class="form-control" id="basic-icon-default-fullname" placeholder="Enter your name" aria-label="Enter your name" aria-describedby="basic-icon-default-fullname2" />
+            </div>
+        </div>
+    </div>
 
-                                            </div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class=" col-form-label" for="basic-icon-default-email">Email</label>
-                                                <div class="col-sm-10">
-                                                    <div class="input-group input-group-merge">
-                                                        <span class="input-group-text"><i class="bx bx-envelope"></i></span>
-                                                        <input type="text" name="email" value="<?php echo  $row['email'] ?> id=" basic-icon-default-email" class="form-control" placeholder="gmail" aria-label="john.doe" aria-describedby="basic-icon-default-email2" />
-                                                        <span id="basic-icon-default-email2" class="input-group-text">@gmail.com</span>
-                                                    </div>
-                                                    <div class="form-text">You can use letters, numbers & periods</div>
-                                                </div>
-                                            </div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class=" form-label" for="basic-icon-default-phone">message</label>
-                                                <div class="col-sm-10">
-                                                    <div class="input-group input-group-merge">
-                                                        <span id="basic-icon-default-phone2" class="input-group-text"><i class="bx bx-phone"></i></span>
-                                                        <input type="text" name="message" value="<?php echo  $row['message'] ?>" id="basic-icon-default-phone" class="form-control phone-mask" placeholder="658 799 8941" aria-label="658 799 8941" aria-describedby="basic-icon-default-phone2" />
-                                                    </div>
-                                                </div>
-                                            </div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class=" form-label" for="basic-icon-default-message">status</label>
-                                                <div class="col-sm-10">
-                                                    <select name="status" class="form-control" id="status" required>
-                                                        <option value="0" <?php echo  $row['status'] ?> selected>Pending</option>
-                                                        <option value="1" <?php echo  $row['status'] ?> selected>In Progress</option>
-                                                        <option value="2" <?php echo  $row['status'] ?> selected>Completed</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-10">
-                                            <button type="submit" name="save" class="btn btn-primary">Submit</button>
-                                        </div>
-                                    </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+        <label class="col-form-label" for="basic-icon-default-fullname">Username</label>
+        <div class="col-sm-10">
+            <div class="input-group input-group-merge">
+                <span id="basic-icon-default-fullname2" class="input-group-text"></span>
+                <input type="text" name="username" class="form-control" id="basic-icon-default-fullname" placeholder="Enter username" aria-label="Enter username" aria-describedby="basic-icon-default-fullname2" />
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+        <label class="col-form-label" for="basic-icon-default-fullname">Phone</label>
+        <div class="col-sm-10">
+            <div class="input-group input-group-merge">
+                <span id="basic-icon-default-fullname2" class="input-group-text"></span>
+                <input type="number" name="phone" class="form-control" id="basic-icon-default-fullname" aria-label="Enter phone number" aria-describedby="basic-icon-default-fullname2" />
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+        <label class="col-form-label" for="basic-icon-default-email">Email</label>
+        <div class="col-sm-10">
+            <div class="input-group input-group-merge">
+                <span class="input-group-text"><i class="bx bx-envelope"></i></span>
+                <input type="text" name="email" id="basic-icon-default-email" class="form-control" placeholder="yourname" aria-label="john.doe" aria-describedby="basic-icon-default-email2" />
+                <span id="basic-icon-default-email2" class="input-group-text">@gmail.com</span>
+            </div>
+            <div class="form-text">You can use letters, numbers & periods</div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+        <label class="form-label" for="basic-icon-default-password">Password</label>
+        <div class="col-sm-10">
+            <div class="input-group input-group-merge">
+                <span id="basic-icon-default-password2" class="input-group-text"></span>
+                <input type="password" name="password" id="basic-icon-default-password" class="form-control" aria-label="Enter password" aria-describedby="basic-icon-default-password2" />
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+        <label class="col-form-label" for="basic-icon-default-role">Role</label>
+        <div class="col-sm-10">
+            <div class="input-group input-group-merge">
+                <span id="basic-icon-default-role2" class="input-group-text"></span>
+                <input type="text" name="role" class="form-control" id="basic-icon-default-role" placeholder="Enter role" aria-label="Enter role" aria-describedby="basic-icon-default-role2" />
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+        <label class="form-label" for="status">Status</label>
+        <div class="col-sm-10">
+            <select name="status" class="form-control" id="status" required>
+                <option value="0">Pending</option>
+                <option value="1">In Progress</option>
+                <option value="2">Completed</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-sm-10">
+        <button type="submit" name="save" class="btn btn-primary">Submit</button>
+    </div>
+</form>
                 <!-- / Content -->
 
                 <?php require('../layouts/footer.php'); ?>
