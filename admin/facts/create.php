@@ -22,7 +22,7 @@
                     <!-- Content -->
 
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Users/</span> Add User
+                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">users/</span> Add users
                         </h4>
 
                         <!-- Basic Layout & Basic with Icons -->
@@ -37,17 +37,10 @@
                                     <div class="card-body">
 
                                         <?php
-
-                                        if (isset($_GET['id'])) {
-                                            $id = $_GET['id'];
-
-                                            $sql = "SELECT * FROM users WHERE id=$id";
-                                            $result = mysqli_query($conn, $sql);
-                                            $row = mysqli_fetch_assoc($result);
-                                        }
                                         if (isset($_POST['save'])) {
 
                                             $name = $_POST['name'];
+
                                             $username = $_POST['username'];
                                             $phone = $_POST['phone'];
                                             $email = $_POST['email'];
@@ -55,24 +48,28 @@
                                             $role = $_POST['role'];
                                             $status = $_POST['status'];
 
-                                            if ($name != "" && $email != "" && $username != "" && $phone != "" && $email != "" && $password != "" && $role != "" && $status != "") {
-                                                $insert = "UPDATE users SET name='$name', phone='$phone', email='$email', password='$password' role='$role', status='$status' WHERE id=$id";
+                                            if ($name != "" && $username != "" && $phone != "" && $email != "" && $password != "" && $role != "" && $status != "") {
+                                                $insert = "INSERT INTO users (name, username, phone, email, password, role, status) VALUES ('$name', '$username', '$phone', '$email', '$password', '$role', '$status')";
                                                 $result = mysqli_query($conn, $insert);
+                                                
                                                 if ($result) {
-                                                    echo "<div class='alert alert-success'>Data is Updated</div>";
+                                                    echo "<div class='alert alert-success'>Data is submitted</div>";
                                                     echo "<meta http-equiv=\"refresh\" content=\"2;URL=index.php\">";
                                                 } else {
-                                                    echo "<div class='alert alert-danger'>Data is not Updated</div>";
+                                                    echo "<div class='alert alert-danger'>Data is not submitted</div>";
                                                     echo "<meta http-equiv=\"refresh\" content=\"2;URL=create.php\">";
+
                                                 }
                                             } else {
                                                 echo "<div class='alert alert-danger'>All fields are required</div>";
-                                                echo "<meta http-equiv=\"refresh\" content=\"2;URL=create.php\">";
                                             }
 
                                             // Redirect after 0 seconds
+                                            echo "<meta http-equiv=\"refresh\" content=\"4;URL=create.php\">";
                                         }
-                                        ?>
+
+
+     ?>
     <form class="row" method="POST" enctype="multipart/form-data" action="">
     <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
         <label class="col-form-label" for="basic-icon-default-fullname">Name</label>
@@ -151,6 +148,7 @@
         <button type="submit" name="save" class="btn btn-primary">Submit</button>
     </div>
 </form>
+
                 <!-- / Content -->
 
                 <?php require('../layouts/footer.php'); ?>
