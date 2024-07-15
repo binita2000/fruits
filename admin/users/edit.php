@@ -63,7 +63,7 @@
                                             $role = $_POST['role'];
                                             $status = $_POST['status'];
 
-                                            if ($name != "" && $email != "" && $username != "" && $phone != "" && $email != "" && $password != "" && $role != "" && $status != "") {
+                                            if ($name != ""  && $username != "" && $phone != "" && $email != "" && $password != "" && $role != "" && $status != "") {
                                                 $update = "UPDATE users SET name='$name', phone='$phone', email='$email', password='$password', role='$role', status='$status' WHERE id=$id";
                                                 $result = mysqli_query($conn, $update);
                                                 if ($result) {
