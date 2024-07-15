@@ -121,7 +121,7 @@
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
         <li class="menu-item">
-            <a href="index.html" class="menu-link">
+            <a href="index.php" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
             </a>
@@ -177,12 +177,12 @@
 
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="facts/create.php" class="menu-link">
+                    <a href="hero/create.php" class="menu-link">
                         <div data-i18n="Without menu">Add Hero</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="facts/index.php" class="menu-link">
+                    <a href="hero/index.php" class="menu-link">
                         <div data-i18n="Without navbar">Manage Hero</div>
                     </a>
                 </li>

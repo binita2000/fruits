@@ -104,12 +104,12 @@
 
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="../sliders/create.php" class="menu-link">
+                    <a href="../hero/create.php" class="menu-link">
                         <div data-i18n="Without menu">Add Hero</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="../sliders/index.php" class="menu-link">
+                    <a href="../hero/index.php" class="menu-link">
                         <div data-i18n="Without navbar">Manage Hero</div>
                     </a>
                 </li>
