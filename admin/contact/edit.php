@@ -86,7 +86,7 @@
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i class="bx bx-envelope"></i></span>
-                                                        <input type="text" name="email" value="<?php echo  $row['email'] ?> id=" basic-icon-default-email" class="form-control" placeholder="gmail" aria-label="john.doe" aria-describedby="basic-icon-default-email2" />
+                                                        <input type="text" name="email" value="<?php echo  $row['email'] ?>" id=" basic-icon-default-email" class="form-control" placeholder="gmail" aria-label="john.doe" aria-describedby="basic-icon-default-email2" />
                                                         <span id="basic-icon-default-email2" class="input-group-text">@gmail.com</span>
                                                     </div>
                                                     <div class="form-text">You can use letters, numbers & periods</div>
