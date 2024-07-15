@@ -18,36 +18,36 @@
         <div class="content-wrapper">
           <!-- Content -->
           <div class="container-xxl flex-grow-1 container-p-y">
-            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Basic Tables</h4>
+            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Facts /</span>Manage Facts</h4>
 
             <!-- Basic Bootstrap Table -->
             <div class="card">
-              <h5 class="card-header">Table Basic</h5>
+              <h5 class="card-header">Manage Facts</h5>
               <div class="table-responsive text-nowrap">
                 <table class="table">
                   <thead>
                     <tr>
                       <th>#</th>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Message</th>
+                      <th>Icon</th>
+                      <th>Title</th>
+                      <th>Number</th>
                       <th>Status</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody class="table-border-bottom-0">
                     <?php
-                      $select = "SELECT * FROM contacts ORDER BY name ASC";
+                      $select = "SELECT * FROM facts ORDER BY title ASC";
                       $select_result = mysqli_query($conn, $select);
                       $i = 1;
                       while ($data = mysqli_fetch_array($select_result)) {
                     ?>
                     <tr>
                       <th scope="row"><?php echo $i++; ?></th>
-                      <td><?php echo htmlspecialchars($data['name']); ?></td>
-                      <td><?php echo htmlspecialchars($data['email']); ?></td>
-                      <td><?php echo htmlspecialchars($data['message']); ?></td>
-                      <td><?php echo htmlspecialchars($data['status'] == 1) ? 'Active' : 'In-Active'; ?></td>
+                      <td><img src="<?php echo htmlspecialchars($data['icon']); ?>" alt="Icon" width="50" height="50"></td>
+                      <td><?php echo htmlspecialchars($data['title']); ?></td>
+                      <td><?php echo htmlspecialchars($data['number']); ?></td>
+                      <td><?php echo htmlspecialchars($data['status'] == 2) ? 'Completed' : ($data['status'] == 1 ? 'In Progress' : 'Pending'); ?></td>
                       <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -55,7 +55,7 @@
                           </button>
                           <div class="dropdown-menu">
                             <a class="dropdown-item" href="edit.php?id=<?php echo $data['id']; ?>"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                            <a class="dropdown-item" href="delete.php?id=<?php echo $data['id']; ?>" onclick=" return confirm('Do you want to delete this data??/')"><i class="bx bx-trash me-1"></i> Delete</a>
+                            <a class="dropdown-item" href="delete.php?id=<?php echo $data['id']; ?>" onclick=" return confirm('Do you want to delete this fact?')"><i class="bx bx-trash me-1"></i> Delete</a>
                           </div>
                         </div>
                       </td>
