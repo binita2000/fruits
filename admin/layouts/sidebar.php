@@ -63,13 +63,13 @@
 
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="../sliders/create.php" class="menu-link">
-                        <div data-i18n="Without menu">Add User</div>
+                    <a href="../users/create.php" class="menu-link">
+                        <div data-i18n="Without menu">Add Users</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="../sliders/index.php" class="menu-link">
-                        <div data-i18n="Without navbar">Manage User</div>
+                    <a href="../users/index.php" class="menu-link">
+                        <div data-i18n="Without navbar">Manage Users</div>
                     </a>
                 </li>
             </ul>

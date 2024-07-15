@@ -1,48 +1,4 @@
-<?php
-require ('config/config.php');
-
-if (isset($_POST['login'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    if ($email != "" && $password != "") {
-        $query = "SELECT * FROM users WHERE email='$email' ";
-        $result = mysqli_query($conn, $query);
-        // var_dump($result);
-        // $count = mysqli_num_rows($result);
-        // var_dump($count);
-
-        if ($result) {
-            $user = $result->fetch_assoc();
-            // var_dump($user);
-            if ($user) {
-                if (password_verify($password, $user["password"])) {
-                    session_start();
-                    $_SESSION['id'] = $user['id'];
-                    $_SESSION['username'] = $user['username'];
-                    $_SESSION['email'] = $user['email'];
-
-                    echo "Login successful.";
-                     header("Refresh:0 url=../dashboard.php?msg=login_success");
-                } else {
-                    echo header("Refresh:0 url=../index.php?msg=password_error");
-                }
-            } else {
-                echo header("Refresh:0 url=../index.php?msg=user_not_found");
-            }
-        } else {
-            echo header("Refresh:0 url=../index.php?msg=email_error");
-        }
-
-
-    } else {
-        
-        header("Refresh:0; url=../index.php?msg=required");
-    }
-}
-
-?>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 
 <!-- =========================================================
 * Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
@@ -197,7 +153,7 @@ if (isset($_POST['login'])) {
     <div class="mb-3 form-password-toggle">
         <div class="d-flex justify-content-between">
             <label class="form-label" for="password">Password</label>
-            <a href="auth-forgot-password-basic.html">
+            <a href="auth-forgot-password-basic.php">
                 <small>Forgot Password?</small>
             </a>
         </div>
@@ -262,4 +218,4 @@ if (isset($_POST['login'])) {
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
-</html> -->
+</html>
