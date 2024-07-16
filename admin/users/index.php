@@ -18,11 +18,19 @@
         <div class="content-wrapper">
           <!-- Content -->
           <div class="container-xxl flex-grow-1 container-p-y">
+<<<<<<< HEAD
+            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">users /</span> Basic users</h4>
+
+            <!-- Basic Bootstrap Table -->
+            <div class="card">
+              <h5 class="card-header">Table users</h5>
+=======
             <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Users /</span>Manage Users</h4>
 
             <!-- Basic Bootstrap Table -->
             <div class="card">
               <h5 class="card-header">Manage Users</h5>
+>>>>>>> d5af4cec62fcd3b91111ac8abbbb208045b80f99
               <div class="table-responsive text-nowrap">
                 <table class="table">
                   <thead>
