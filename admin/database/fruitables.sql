@@ -176,7 +176,6 @@ CREATE TABLE `users` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-<<<<<<< HEAD:admin/database/fruitables.sql
 -- Create the categories table
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -267,9 +266,9 @@ CREATE TABLE IF NOT EXISTS `facts` (
 -- Create the files table
 CREATE TABLE IF NOT EXISTS `files` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `ititle` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `image` int NOT NULL,
+  `image` varchar (255) NOT NULL,
   `type` varchar(10) NOT NULL,
   `status` int(11) DEFAULT 1,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
@@ -292,11 +291,6 @@ CREATE TABLE IF NOT EXISTS `settings` (
 ALTER TABLE `ratings` 
 ADD CONSTRAINT `fk_ratings_user_id` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE,
 ADD CONSTRAINT `fk_ratings_product_id` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE;
-=======
---
--- Indexes for dumped tables
---
->>>>>>> 59e26d21d860894d68660d782e598e6d7846ca06:database/fruitables.sql
 
 --
 -- Indexes for table `products`
