@@ -18,60 +18,54 @@
         <div class="content-wrapper">
           <!-- Content -->
           <div class="container-xxl flex-grow-1 container-p-y">
-            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Sliders /</span> Manage Sliders</h4>
+            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Categories /</span>Manage Categories</h4>
 
             <!-- Basic Bootstrap Table -->
             <div class="card">
-              <h5 class="card-header">Slider List</h5>
+              <h5 class="card-header">Manage Categories</h5>
               <div class="table-responsive text-nowrap">
                 <table class="table">
                   <thead>
                     <tr>
-                      <th>Slider Image</th>
-                      <th>Category ID</th>
+                      <th>#</th>
+                      <th>Title</th>
+                      <th>Description</th>
+                      <th>Image</th>
                       <th>Status</th>
-                      <th>Created At</th>
-                      <th>Updated At</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody class="table-border-bottom-0">
                     <?php
-                    // Fetch sliders data from the database
-                    $query = "SELECT * FROM sliders";
-                    $result = mysqli_query($conn, $query);
-
-                    while ($row = mysqli_fetch_assoc($result)) {
-                      $statusBadgeClass = $row['status'] == 1 ? 'bg-label-primary' : 'bg-label-warning';
-                      $statusText = $row['status'] == 1 ? 'Active' : 'Inactive';
-                      echo "
-                      <tr>
-                        <td><img src='../uploads/sliders/{$row['image']}' alt='Slider Image' class='rounded-circle' width='50' height='50'></td>
-                        <td>{$row['category_id']}</td>
-                        <td><span class='badge {$statusBadgeClass} me-1'>{$statusText}</span></td>
-                        <td>{$row['created_at']}</td>
-                        <td>{$row['updated_at']}</td>
-                        <td>
-                          <div class='dropdown'>
-                            <button type='button' class='btn p-0 dropdown-toggle hide-arrow' data-bs-toggle='dropdown'>
-                              <i class='bx bx-dots-vertical-rounded'></i>
-                            </button>
-                            <div class='dropdown-menu'>
-                              <a class='dropdown-item' href='edit_slider.php?id={$row['id']}'><i class='bx bx-edit-alt me-1'></i> Edit</a>
-                              <a class='dropdown-item' href='delete_slider.php?id={$row['id']}'><i class='bx bx-trash me-1'></i> Delete</a>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      ";
-                    }
+                      $select = "SELECT * FROM categories ORDER BY title ASC";
+                      $select_result = mysqli_query($conn, $select);
+                      $i = 1;
+                      while ($data = mysqli_fetch_array($select_result)) {
                     ?>
+                    <tr>
+                      <th scope="row"><?php echo $i++; ?></th>
+                      <td><?php echo htmlspecialchars($data['title']); ?></td>
+                      <td><?php echo htmlspecialchars($data['description']); ?></td>
+                      <td><img src="<?php echo htmlspecialchars($data['image']); ?>" alt="Category Image" style="width: 100px; height: auto;"></td>
+                      <td><?php echo ($data['status'] == 1) ? 'Active' : 'In-Active'; ?></td>
+                      <td>
+                        <div class="dropdown">
+                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                            <i class="bx bx-dots-vertical-rounded"></i>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="edit.php?id=<?php echo $data['id']; ?>"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                            <a class="dropdown-item" href="delete.php?id=<?php echo $data['id']; ?>" onclick=" return confirm('Do you want to delete this data??')"><i class="bx bx-trash me-1"></i> Delete</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <?php } ?>
                   </tbody>
                 </table>
               </div>
             </div>
             <!--/ Basic Bootstrap Table -->
-
           </div>
           <!-- / Content -->
 
@@ -81,4 +75,3 @@
     </div>
   </div>
 </body>
-</html>
