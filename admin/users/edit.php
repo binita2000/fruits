@@ -63,7 +63,11 @@
                                             $role = $_POST['role'];
                                             $status = $_POST['status'];
 
+<<<<<<< HEAD
                                             if ($name != "" && $email != "" && $username != "" && $phone != "" && $email != "" && $password != "" && $role != "" && $status != "") {
+=======
+                                            if ($name != ""  && $username != "" && $phone != "" && $email != "" && $password != "" && $role != "" && $status != "") {
+>>>>>>> d5af4cec62fcd3b91111ac8abbbb208045b80f99
                                                 $update = "UPDATE users SET name='$name', phone='$phone', email='$email', password='$password', role='$role', status='$status' WHERE id=$id";
                                                 $result = mysqli_query($conn, $update);
                                                 if ($result) {
@@ -160,4 +164,8 @@
                                         </form>
                                         <!-- / Content -->
 
+<<<<<<< HEAD
                                         <?php require('../layouts/footer.php'); ?>
+=======
+                                        <?php require('../layouts/footer.php'); ?>
+>>>>>>> d5af4cec62fcd3b91111ac8abbbb208045b80f99
