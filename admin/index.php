@@ -197,7 +197,7 @@ if (isset($_POST['login'])) {
     <div class="mb-3 form-password-toggle">
         <div class="d-flex justify-content-between">
             <label class="form-label" for="password">Password</label>
-            <a href="auth-forgot-password-basic.html">
+            <a href="auth-forgot-password-basic.php">
                 <small>Forgot Password?</small>
             </a>
         </div>
@@ -262,4 +262,4 @@ if (isset($_POST['login'])) {
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
-</html> -->
+</html> 

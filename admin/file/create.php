@@ -95,8 +95,8 @@
                                                 <label class="form-label" for="basic-icon-default-phone">Image</label>
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
-                                                        <span id="basic-icon-default-phone2" class="input-group-text"></span>
-                                                        <input type="file" name="dataFile" accept="image/*" class="form-control" id="file_link" required />
+                                                    <span id="basic-icon-default-image2" class="input-group-text"><i class="bx bx-image"></i></span>
+                                                    <input type="file" name="dataFile" accept="image/*" class="form-control" id="file_link" required />
                                                     </div>
                                                 </div>
                                             </div>

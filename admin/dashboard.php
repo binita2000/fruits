@@ -248,21 +248,22 @@
                 </li>
             </ul>
         </li>
+        <!-- Categories Section -->
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Setting</div>
+                <div data-i18n="Layouts">Category</div>
             </a>
 
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="Setting/create.php" class="menu-link">
-                        <div data-i18n="Without menu">Add Setting</div>
+                    <a href="categories/create.php" class="menu-link">
+                        <div data-i18n="Without menu">Add Category</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="Setting/index.php" class="menu-link">
-                        <div data-i18n="Without navbar">Manage Setting</div>
+                    <a href="categories/index.php" class="menu-link">
+                        <div data-i18n="Without navbar">Manage Category</div>
                     </a>
                 </li>
             </ul>
