@@ -144,17 +144,18 @@
 
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="../sliders/create.php" class="menu-link">
+                    <a href="../facts/create.php" class="menu-link">
                         <div data-i18n="Without menu">Add facts</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="../sliders/index.php" class="menu-link">
+                    <a href="../facts/index.php" class="menu-link">
                         <div data-i18n="Without navbar">Manage facts</div>
                     </a>
                 </li>
             </ul>
         </li>
+        <!-- Setting section -->
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
@@ -174,6 +175,7 @@
                 </li>
             </ul>
         </li>
+        <!-- file section -->
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
