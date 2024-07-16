@@ -58,11 +58,20 @@
 
                                         <form class="row" method="POST" enctype="multipart/form-data" action="">
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class="col-form-label" for="basic-icon-default-category_id">Category ID</label>
+                                                <label class="col-form-label" for="basic-icon-default-category_id">Category Title</label>
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="basic-icon-default-category_id2" class="input-group-text"><i class="bx bx-category"></i></span>
-                                                        <input type="number" name="category_id" class="form-control" id="basic-icon-default-category_id" placeholder="Enter category ID" aria-label="Enter category ID" aria-describedby="basic-icon-default-category_id2" />
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <?php 
+                                                            
+                                                            
+                                                            ?>
+                                                            <option selected>Open this select menu</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -104,4 +113,9 @@
         </div>
     </div>
 </body>
+<<<<<<< HEAD
+
 </html>
+=======
+</html>
+>>>>>>> ff3965f0e2ef321b5e0e89e7a43376199049a770
