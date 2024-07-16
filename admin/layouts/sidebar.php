@@ -119,18 +119,38 @@
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">contact</div>
+                <div data-i18n="Layouts">Contact</div>
             </a>
 
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="../contact/create.php" class="menu-link">
-                        <div data-i18n="Without menu">Add contact</div>
+                        <div data-i18n="Without menu">Add Contact</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="../contact/index.php" class="menu-link">
-                        <div data-i18n="Without navbar">Manage contact</div>
+                        <div data-i18n="Without navbar">Manage Contact</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- catogary Section -->
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div data-i18n="Layouts">Category</div>
+            </a>
+
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="../categories/create.php" class="menu-link">
+                        <div data-i18n="Without menu">Add Categories</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="../categories/index.php" class="menu-link">
+                        <div data-i18n="Without navbar">Manage Categories</div>
                     </a>
                 </li>
             </ul>
@@ -139,18 +159,18 @@
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">facts</div>
+                <div data-i18n="Layouts">Facts</div>
             </a>
 
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="../facts/create.php" class="menu-link">
-                        <div data-i18n="Without menu">Add facts</div>
+                        <div data-i18n="Without menu">Add Facts</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="../facts/index.php" class="menu-link">
-                        <div data-i18n="Without navbar">Manage facts</div>
+                        <div data-i18n="Without navbar">Manage Facts</div>
                     </a>
                 </li>
             </ul>
@@ -165,12 +185,12 @@
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="../setting/create.php" class="menu-link">
-                        <div data-i18n="Without menu">Add setting</div>
+                        <div data-i18n="Without menu">Add Setting</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="../setting/index.php" class="menu-link">
-                        <div data-i18n="Without navbar">Manage setting</div>
+                        <div data-i18n="Without navbar">Manage Setting</div>
                     </a>
                 </li>
             </ul>
@@ -179,18 +199,18 @@
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">file</div>
+                <div data-i18n="Layouts">File</div>
             </a>
 
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="../file/create.php" class="menu-link">
-                        <div data-i18n="Without menu">Add file</div>
+                        <div data-i18n="Without menu">Add File</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="../file/index.php" class="menu-link">
-                        <div data-i18n="Without navbar">Manage file</div>
+                        <div data-i18n="Without navbar">Manage File</div>
                     </a>
                 </li>
             </ul>
