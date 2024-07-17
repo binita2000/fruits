@@ -31,7 +31,7 @@
                             <div class="col-xxl">
                                 <div class="card mb-4">
                                     <div class="card-header d-flex align-items-center justify-content-between">
-                                        <h5 class="mb-0">Basic with Icons</h5>
+                                        <h5 class="mb-0"><a class="btn btn-primary btn-sm " href="index.php" role="button">Manage Categories </a></h5>
                                         <small class="text-muted float-end">Merged input group</small>
                                     </div>
                                     <div class="card-body">

@@ -30,15 +30,16 @@
                       <th>Slider Image</th>
                       <th>Category ID</th>
                       <th>Status</th>
-                      <th>Created At</th>
-                      <th>Updated At</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody class="table-border-bottom-0">
                     <?php
                     // Fetch sliders data from the database
-                    $query = "SELECT * FROM sliders";
+                    $query = "SELECT sliders.*, categories.title AS categories_title 
+                    FROM sliders 
+                    INNER JOIN categories 
+                    ON sliders.category_id = categories.id";
                     $result = mysqli_query($conn, $query);
 
                     while ($row = mysqli_fetch_assoc($result)) {
@@ -46,11 +47,9 @@
                       $statusText = $row['status'] == 1 ? 'Active' : 'Inactive';
                       echo "
                       <tr>
-                        <td><img src='../uploads/sliders/{$row['image']}' alt='Slider Image' class='rounded-circle' width='50' height='50'></td>
-                        <td>{$row['category_id']}</td>
+                        <td><img src='../uploads/{$row['image']}' alt='Slider Image' class='rounded-circle' width='50' height='50'></td>
+                        <td>{$row['categories_title']}</td>
                         <td><span class='badge {$statusBadgeClass} me-1'>{$statusText}</span></td>
-                        <td>{$row['created_at']}</td>
-                        <td>{$row['updated_at']}</td>
                         <td>
                           <div class='dropdown'>
                             <button type='button' class='btn p-0 dropdown-toggle hide-arrow' data-bs-toggle='dropdown'>
@@ -81,4 +80,5 @@
     </div>
   </div>
 </body>
+
 </html>

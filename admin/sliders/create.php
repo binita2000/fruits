@@ -33,13 +33,14 @@
                                         <?php
                                         if (isset($_POST['save'])) {
                                             $category_id = $_POST['category_id'];
+                                            $image = $_POST['image'];
+                                            // $image = $_FILES['image']['name'];
+                                            // $image_temp = $_FILES['image']['tmp_name'];
+                                            // $image_folder = '../uploads/sliders/' . $image;
                                             $status = $_POST['status'];
-                                            $image = $_FILES['image']['name'];
-                                            $image_temp = $_FILES['image']['tmp_name'];
-                                            $image_folder = '../uploads/sliders/' . $image;
 
-                                            if ($category_id != "" && $status != "" && $image != "") {
-                                                move_uploaded_file($image_temp, $image_folder);
+                                            if ($status != "" && $image != "") {
+                                                // move_uploaded_file($image_temp, $image_folder);
                                                 $insert = "INSERT INTO sliders (category_id, image, status) VALUES ('$category_id', '$image', '$status')";
                                                 $result = mysqli_query($conn, $insert);
 
@@ -62,15 +63,16 @@
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="basic-icon-default-category_id2" class="input-group-text"><i class="bx bx-category"></i></span>
-                                                        <select class="form-select" aria-label="Default select example">
-                                                            <?php 
-                                                            
-                                                            
-                                                            ?>
+                                                        <select class="form-select" name="category_id" aria-label="Default select example">
                                                             <option selected>Open this select menu</option>
-                                                            <option value="1">One</option>
-                                                            <option value="2">Two</option>
-                                                            <option value="3">Three</option>
+                                                            <?php
+                                                            $category = "SELECT id, title FROM categories";
+                                                            $c_result = mysqli_query($conn, $category);
+                                                            while ($c_data = mysqli_fetch_assoc($c_result)) {
+                                                                echo "<option value='{$c_data['id']}'>{$c_data['title']}</option>";
+                                                            }
+
+                                                            ?>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -91,7 +93,7 @@
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="basic-icon-default-image2" class="input-group-text"><i class="bx bx-image"></i></span>
-                                                        <input type="file" name="image" class="form-control" id="basic-icon-default-image" aria-label="Upload image" aria-describedby="basic-icon-default-image2" />
+                                                        <input type="text" name="image" class="form-control" id="basic-icon-default-image" aria-label="Upload image" aria-describedby="basic-icon-default-image2" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -113,9 +115,8 @@
         </div>
     </div>
 </body>
-<<<<<<< HEAD
+<<<<<<< HEAD </html>
+    =======
 
-</html>
-=======
-</html>
->>>>>>> ff3965f0e2ef321b5e0e89e7a43376199049a770
+    </html>
+    >>>>>>> ff3965f0e2ef321b5e0e89e7a43376199049a770

@@ -39,7 +39,7 @@
                       <th>title</th>
                       <th>description</th>
                       <th>image</th>
-                      <th>type</th>
+                      <th>Image Link</th>
                       <th>Status</th>
                       <th>Action</th>
                       
@@ -58,7 +58,7 @@
                         <td><?php echo htmlspecialchars($data['description']); ?></td>
                         <td><img src="<?php  echo "../uploads/". $data['image']; ?>" width="100" height="100" alt=""></td>
 
-                        <td><?php echo htmlspecialchars($data['type']); ?></td>
+                        <td><?php echo htmlspecialchars($data['image']); ?></td>
                         <td><?php echo htmlspecialchars($data['status'] == 1) ? 'Active' : 'In-Active'; ?></td>
                         <td>
                           <div class="dropdown">
