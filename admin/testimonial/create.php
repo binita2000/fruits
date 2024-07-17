@@ -22,7 +22,7 @@
                     <!-- Content -->
 
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Sliders/</span> Add Slider
+                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">testimonials/</span> Add testimonial
                         </h4>
 
                         <!-- Basic Layout & Basic with Icons -->
@@ -31,20 +31,28 @@
                             <div class="col-xxl">
                                 <div class="card mb-4">
                                     <div class="card-header d-flex align-items-center justify-content-between">
-                                    <h5 class="mb-0"><a class="btn btn-primary btn-sm " href="index.php" role="button"> Manage Slider</a></h5>
-                                        <small class="text-muted float-end">Merged input group</small>
+                                    <h5 class="mb-0"><a class="btn btn-primary btn-sm " href="index.php" role="button"> Manage testimonial</a></h5>
+                                    <small class="text-muted float-end">Merged input group</small>
                                     </div>
                                     <div class="card-body">
 
                                         <?php
+
+
+
                                         if (isset($_POST['save'])) {
 
-                                            $category_id = $_POST['category_id'];
+                                           
+                                            $message = $_POST['message'];
                                             $image = $_POST['image'];
-                                            $status = $_POST['status'];
+                                            $name = $_POST['name'];
+                                            $profession = $_POST['profession'];
+                                            
+                                           
 
-                                            if ($category_id != "" && $image != "" && $status != "") {
-                                                $insert = "INSERT INTO sliders (category_id, image, status) VALUES ('$category_id', '$image', '$status')";
+                                            if ($message != "" && $image != "" && $name != "" && $profession !="") {
+                                                $insert = "INSERT INTO testimonial (message, image,  name, profession) 
+                                                VALUES ('$message', '$image', '$name','$profession')";
                                                 $result = mysqli_query($conn, $insert);
 
                                                 if ($result) {
@@ -64,32 +72,16 @@
                                         ?>
 
                                         <form class="row" method="POST" enctype="multipart/form-data" action="">
-                                            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class="col-form-label" for="basic-icon-default-title">Title</label>
-                                                <div class="col-sm-10">
-                                                    <div class="input-group input-group-merge">
-                                                        <span id="basic-icon-default-category_id2" class="input-group-text"><i class="bx bx-category"></i></span>
-                                                        <select class="form-select" name="category_id" aria-label="Default select example">
-                                                            <option selected>Open this select menu</option>
-                                                            <?php
-                                                            $category = "SELECT id, title FROM categories";
-                                                            $c_result = mysqli_query($conn, $category);
-                                                            while ($c_data = mysqli_fetch_assoc($c_result)) {
-                                                                echo "<option value='{$c_data['id']}'>{$c_data['title']}</option>";
-                                                            }
 
-                                                            ?>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
+
+                                            
 
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class="col-form-label" for="basic-icon-default-description">Description</label>
+                                                <label class="col-form-label" for="basic-icon-default-description">message</label>
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="basic-icon-default-description2" class="input-group-text"><i class="bx bx-message-square-dots"></i></span>
-                                                        <textarea name="description" class="form-control" id="basic-icon-default-description" placeholder="Enter description" aria-label="Enter description" aria-describedby="basic-icon-default-description2"></textarea>
+                                                        <textarea name="message" class="form-control" id="basic-icon-default-description" placeholder="Enter message" aria-label="Enter description" aria-describedby="basic-icon-default-description2"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -99,21 +91,30 @@
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="basic-icon-default-image2" class="input-group-text"><i class="bx bx-image"></i></span>
-                                                        <input type="text" name="image" class="form-control" id="basic-icon-default-image" placeholder="Enter image URL" aria-label="Enter image URL" aria-describedby="basic-icon-default-image2" />
+                                                        <input type="text" name="image" class="form-control" id="basic-icon-default-image" placeholder="Enter image URL from Flies" aria-label="" aria-describedby="basic-icon-default-image2" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                                                <label class="col-form-label" for="basic-icon-default-description">name</label>
+                                                <div class="col-sm-10">
+                                                    <div class="input-group input-group-merge">
+                                                        <span id="basic-icon-default-description2" class="input-group-text"></span>
+                                                        <input type="text" name="name" class="form-control" id="basic-icon-default-image" placeholder="Enter name" aria-label="" aria-describedby="basic-icon-default-image2" />
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class="form-label" for="status">Status</label>
+                                                <label class="col-form-label" for="basic-icon-default-image">profession</label>
                                                 <div class="col-sm-10">
-                                                    <select name="status" class="form-control" id="status" required>
-                                                        <option value="0">Pending</option>
-                                                        <option value="1">In Progress</option>
-                                                        <option value="2">Completed</option>
-                                                    </select>
+                                                    <div class="input-group input-group-merge">
+                                                        <span id="basic-icon-default-image2" class="input-group-text"></span>
+                                                        <input type="text" name="profession" class="form-control" id="basic-icon-default-image" placeholder="Enter profession" aria-label="" aria-describedby="basic-icon-default-image2" />
+                                                    </div>
                                                 </div>
                                             </div>
+                                            
 
                                             <div class="col-sm-10">
                                                 <button type="submit" name="save" class="btn btn-primary">Submit</button>
@@ -129,4 +130,3 @@
                     <!-- / Content -->
 
                     <?php require('../layouts/footer.php'); ?>
-                
