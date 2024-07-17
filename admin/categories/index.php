@@ -22,7 +22,7 @@
 
             <!-- Basic Bootstrap Table -->
             <div class="card">
-              <h5 class="card-header">Manage Categories</h5>
+              <h5 class="card-header"><a class="btn btn-primary btn-sm " href="create.php" role="button"> Add Category</a></h5>
               <div class="table-responsive text-nowrap">
                 <table class="table">
                   <thead>
@@ -46,7 +46,7 @@
                       <th scope="row"><?php echo $i++; ?></th>
                       <td><?php echo htmlspecialchars($data['title']); ?></td>
                       <td><?php echo htmlspecialchars($data['description']); ?></td>
-                      <td><img src="<?php echo htmlspecialchars($data['image']); ?>" alt="Category Image" style="width: 100px; height: auto;"></td>
+                      <td><img src="<?php echo htmlspecialchars('../uploads/'.$data['image']); ?>" alt="Category Image" style="width: 100px; height: auto;"></td>
                       <td><?php echo ($data['status'] == 1) ? 'Active' : 'In-Active'; ?></td>
                       <td>
                         <div class="dropdown">

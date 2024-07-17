@@ -22,7 +22,7 @@
                     <!-- Content -->
 
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">sliders/</span> Add Slider
+                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">products/</span> Add product
                         </h4>
 
                         <!-- Basic Layout & Basic with Icons -->
@@ -37,14 +37,22 @@
                                     <div class="card-body">
 
                                         <?php
+
+
+
                                         if (isset($_POST['save'])) {
 
-                                            $category_id = $_POST['category_id'];
+                                            $title = $_POST['title'];
+                                            $description = $_POST['description'];
                                             $image = $_POST['image'];
+                                            $price = $_POST['price'];
+                                            $qty = $_POST['qty'];
+                                            $discount = $_POST['discount'];
                                             $status = $_POST['status'];
 
-                                            if ($category_id != "" && $image != "" && $status != "") {
-                                                $insert = "INSERT INTO sliders (category_id, image, status) VALUES ('$category_id', '$image', '$status')";
+                                            if ($title != "" && $image != "" && $status != "") {
+                                                $insert = "INSERT INTO products (title,description, image,  price, qty, discount, status) 
+                                                VALUES ('$title','$description', '$image', '$price','$qty', '$discount', '$status')";
                                                 $result = mysqli_query($conn, $insert);
 
                                                 if ($result) {
@@ -64,22 +72,14 @@
                                         ?>
 
                                         <form class="row" method="POST" enctype="multipart/form-data" action="">
+
+
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class="col-form-label" for="basic-icon-default-title">Title</label>
+                                                <label class="col-form-label" for="basic-icon-default-description">Title</label>
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
-                                                        <span id="basic-icon-default-category_id2" class="input-group-text"><i class="bx bx-category"></i></span>
-                                                        <select class="form-select" name="category_id" aria-label="Default select example">
-                                                            <option selected>Open this select menu</option>
-                                                            <?php
-                                                            $category = "SELECT id, title FROM categories";
-                                                            $c_result = mysqli_query($conn, $category);
-                                                            while ($c_data = mysqli_fetch_assoc($c_result)) {
-                                                                echo "<option value='{$c_data['id']}'>{$c_data['title']}</option>";
-                                                            }
-
-                                                            ?>
-                                                        </select>
+                                                        <span id="basic-icon-default-description2" class="input-group-text"><i class="bx bx-message-square-dots"></i></span>
+                                                        <input type="text" name="title" class="form-control" id="basic-icon-default-image" placeholder="Enter title" aria-label="" aria-describedby="basic-icon-default-image2" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -99,7 +99,35 @@
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="basic-icon-default-image2" class="input-group-text"><i class="bx bx-image"></i></span>
-                                                        <input type="text" name="image" class="form-control" id="basic-icon-default-image" placeholder="Enter image URL" aria-label="Enter image URL" aria-describedby="basic-icon-default-image2" />
+                                                        <input type="text" name="image" class="form-control" id="basic-icon-default-image" placeholder="Enter image URL from Flies" aria-label="" aria-describedby="basic-icon-default-image2" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                                                <label class="col-form-label" for="basic-icon-default-description">Price</label>
+                                                <div class="col-sm-10">
+                                                    <div class="input-group input-group-merge">
+                                                        <span id="basic-icon-default-description2" class="input-group-text"><i class="bx bx-message-square-dots"></i></span>
+                                                        <input type="number" name="price" class="form-control" id="basic-icon-default-image" placeholder="Enter price" aria-label="" aria-describedby="basic-icon-default-image2" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                                                <label class="col-form-label" for="basic-icon-default-image">Qty</label>
+                                                <div class="col-sm-10">
+                                                    <div class="input-group input-group-merge">
+                                                        <span id="basic-icon-default-image2" class="input-group-text"><i class="bx bx-image"></i></span>
+                                                        <input type="number" name="qty" class="form-control" id="basic-icon-default-image" placeholder="Enter qty" aria-label="" aria-describedby="basic-icon-default-image2" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                                                <label class="col-form-label" for="basic-icon-default-image">Discount</label>
+                                                <div class="col-sm-10">
+                                                    <div class="input-group input-group-merge">
+                                                        <span id="basic-icon-default-image2" class="input-group-text"><i class="bx bx-image"></i></span>
+                                                        <input type="number" name="discount" class="form-control" id="basic-icon-default-image" placeholder="Enter discount" aria-label="" aria-describedby="basic-icon-default-image2" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -108,9 +136,8 @@
                                                 <label class="form-label" for="status">Status</label>
                                                 <div class="col-sm-10">
                                                     <select name="status" class="form-control" id="status" required>
-                                                        <option value="0">Pending</option>
-                                                        <option value="1">In Progress</option>
-                                                        <option value="2">Completed</option>
+                                                        <option value="0">Inactive</option>
+                                                        <option value="1">Active</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -129,4 +156,3 @@
                     <!-- / Content -->
 
                     <?php require('../layouts/footer.php'); ?>
-                
