@@ -18,17 +18,18 @@
         <div class="content-wrapper">
           <!-- Content -->
           <div class="container-xxl flex-grow-1 container-p-y">
-            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Sliders /</span> Manage Sliders</h4>
+            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Categories /</span>Manage Categories</h4>
 
             <!-- Basic Bootstrap Table -->
             <div class="card">
-              <h5 class="card-header">Slider List</h5>
+              <h5 class="card-header">Manage Categories</h5>
               <div class="table-responsive text-nowrap">
                 <table class="table">
                   <thead>
                     <tr>
-                      <th>Slider Image</th>
-                      <th>Category ID</th>
+                      <th>#</th>
+                      <th>Title</th>
+                      <th>Image</th>
                       <th>Status</th>
                       <th>Actions</th>
                     </tr>
@@ -41,14 +42,16 @@
                     INNER JOIN categories 
                     ON sliders.category_id = categories.id";
                     $result = mysqli_query($conn, $query);
-
+                    $i = 0;
                     while ($row = mysqli_fetch_assoc($result)) {
                       $statusBadgeClass = $row['status'] == 1 ? 'bg-label-primary' : 'bg-label-warning';
                       $statusText = $row['status'] == 1 ? 'Active' : 'Inactive';
+                      $i++;
                       echo "
                       <tr>
+                      <td> $i</td>
+                      <td>{$row['categories_title']}</td>
                         <td><img src='../uploads/{$row['image']}' alt='Slider Image' class='rounded-circle' width='50' height='50'></td>
-                        <td>{$row['categories_title']}</td>
                         <td><span class='badge {$statusBadgeClass} me-1'>{$statusText}</span></td>
                         <td>
                           <div class='dropdown'>
@@ -63,22 +66,13 @@
                         </td>
                       </tr>
                       ";
-                    }
-                    ?>
+                    } ?>
                   </tbody>
                 </table>
               </div>
             </div>
             <!--/ Basic Bootstrap Table -->
-
           </div>
           <!-- / Content -->
 
           <?php require('../layouts/footer.php'); ?>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-
-</html>

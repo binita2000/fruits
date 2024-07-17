@@ -5,20 +5,25 @@
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
             <!-- Menu -->
+
             <?php require('../layouts/sidebar.php'); ?>
             <!-- / Menu -->
 
             <!-- Layout container -->
             <div class="layout-page">
                 <!-- Navbar -->
+
                 <?php require('../layouts/navbar.php'); ?>
+
                 <!-- / Navbar -->
 
                 <!-- Content wrapper -->
                 <div class="content-wrapper">
                     <!-- Content -->
+
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">sliders/</span> Add Slider</h4>
+                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">sliders/</span> Add Slider
+                        </h4>
 
                         <!-- Basic Layout & Basic with Icons -->
                         <div class="row">
@@ -30,36 +35,37 @@
                                         <small class="text-muted float-end">Merged input group</small>
                                     </div>
                                     <div class="card-body">
+
                                         <?php
                                         if (isset($_POST['save'])) {
+
                                             $category_id = $_POST['category_id'];
                                             $image = $_POST['image'];
-                                            // $image = $_FILES['image']['name'];
-                                            // $image_temp = $_FILES['image']['tmp_name'];
-                                            // $image_folder = '../uploads/sliders/' . $image;
                                             $status = $_POST['status'];
 
-                                            if ($status != "" && $image != "") {
-                                                // move_uploaded_file($image_temp, $image_folder);
+                                            if ($category_id != "" && $image != "" && $status != "") {
                                                 $insert = "INSERT INTO sliders (category_id, image, status) VALUES ('$category_id', '$image', '$status')";
                                                 $result = mysqli_query($conn, $insert);
 
                                                 if ($result) {
-                                                    echo "<div class='alert alert-success'>Slider is added</div>";
+                                                    echo "<div class='alert alert-success'>Data is submitted</div>";
                                                     echo "<meta http-equiv=\"refresh\" content=\"2;URL=index.php\">";
                                                 } else {
-                                                    echo "<div class='alert alert-danger'>Slider is not added</div>";
+                                                    echo "<div class='alert alert-danger'>Data is not submitted</div>";
                                                     echo "<meta http-equiv=\"refresh\" content=\"2;URL=create.php\">";
                                                 }
                                             } else {
                                                 echo "<div class='alert alert-danger'>All fields are required</div>";
                                             }
+
+                                            // Redirect after 0 seconds
+                                            echo "<meta http-equiv=\"refresh\" content=\"4;URL=create.php\">";
                                         }
                                         ?>
 
                                         <form class="row" method="POST" enctype="multipart/form-data" action="">
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class="col-form-label" for="basic-icon-default-category_id">Category Title</label>
+                                                <label class="col-form-label" for="basic-icon-default-title">Title</label>
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="basic-icon-default-category_id2" class="input-group-text"><i class="bx bx-category"></i></span>
@@ -79,12 +85,12 @@
                                             </div>
 
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class="col-form-label" for="basic-icon-default-status">Status</label>
+                                                <label class="col-form-label" for="basic-icon-default-description">Description</label>
                                                 <div class="col-sm-10">
-                                                    <select name="status" class="form-control" id="basic-icon-default-status" required>
-                                                        <option value="1">Active</option>
-                                                        <option value="0">Inactive</option>
-                                                    </select>
+                                                    <div class="input-group input-group-merge">
+                                                        <span id="basic-icon-default-description2" class="input-group-text"><i class="bx bx-message-square-dots"></i></span>
+                                                        <textarea name="description" class="form-control" id="basic-icon-default-description" placeholder="Enter description" aria-label="Enter description" aria-describedby="basic-icon-default-description2"></textarea>
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -93,8 +99,19 @@
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="basic-icon-default-image2" class="input-group-text"><i class="bx bx-image"></i></span>
-                                                        <input type="text" name="image" class="form-control" id="basic-icon-default-image" aria-label="Upload image" aria-describedby="basic-icon-default-image2" />
+                                                        <input type="text" name="image" class="form-control" id="basic-icon-default-image" placeholder="Enter image URL" aria-label="Enter image URL" aria-describedby="basic-icon-default-image2" />
                                                     </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                                                <label class="form-label" for="status">Status</label>
+                                                <div class="col-sm-10">
+                                                    <select name="status" class="form-control" id="status" required>
+                                                        <option value="0">Pending</option>
+                                                        <option value="1">In Progress</option>
+                                                        <option value="2">Completed</option>
+                                                    </select>
                                                 </div>
                                             </div>
 
@@ -102,21 +119,14 @@
                                                 <button type="submit" name="save" class="btn btn-primary">Submit</button>
                                             </div>
                                         </form>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                     <!-- / Content -->
 
                     <?php require('../layouts/footer.php'); ?>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-<<<<<<< HEAD </html>
-    =======
-
-    </html>
-    >>>>>>> ff3965f0e2ef321b5e0e89e7a43376199049a770
+                
