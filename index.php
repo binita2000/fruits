@@ -423,7 +423,7 @@
                                     <img src="img/aarti1.jfif" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="">
                                 </div>
                                 <div class="ms-4 d-block">
-                                    <h4 class="text-dark">Aarti Khadka</h4>
+                                    <h4 class="text-dark">Aarati Khadka</h4>
                                     <p class="m-0 pb-3">Profession</p>
                                     <div class="d-flex pe-5">
                                         <i class="fas fa-star text-primary"></i>
