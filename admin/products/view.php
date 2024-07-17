@@ -22,7 +22,7 @@
                     <!-- Content -->
 
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">products/</span> Add product
+                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">products/</span> View product
                         </h4>
 
                         <!-- Basic Layout & Basic with Icons -->
@@ -31,7 +31,7 @@
                             <div class="col-xxl">
                                 <div class="card mb-4">
                                     <div class="card-header d-flex align-items-center justify-content-between">
-                                        <h5 class="mb-0">Basic with Icons</h5>
+                                        <h5 class="mb-0"><a class="btn btn-primary btn-sm " href="index.php" role="button"> Manage Products</a></h5>
                                         <small class="text-muted float-end">Merged input group</small>
                                     </div>
                                     <div class="card-body">
@@ -39,36 +39,15 @@
                                         <?php
 
 
+                                        if (isset($_GET['id'])) {
 
-                                        if (isset($_POST['save'])) {
+                                            $id = $_GET['id'];
 
-                                            $title = $_POST['title'];
-                                            $description = $_POST['description'];
-                                            $image = $_POST['image'];
-                                            $price = $_POST['price'];
-                                            $qty = $_POST['qty'];
-                                            $discount = $_POST['discount'];
-                                            $status = $_POST['status'];
-
-                                            if ($title != "" && $image != "" && $status != "") {
-                                                $insert = "INSERT INTO products (title,description, image,  price, qty, discount, status) 
-                                                VALUES ('$title','$description', '$image', '$price','$qty', '$discount', '$status')";
-                                                $result = mysqli_query($conn, $insert);
-
-                                                if ($result) {
-                                                    echo "<div class='alert alert-success'>Data is submitted</div>";
-                                                    echo "<meta http-equiv=\"refresh\" content=\"2;URL=index.php\">";
-                                                } else {
-                                                    echo "<div class='alert alert-danger'>Data is not submitted</div>";
-                                                    echo "<meta http-equiv=\"refresh\" content=\"2;URL=create.php\">";
-                                                }
-                                            } else {
-                                                echo "<div class='alert alert-danger'>All fields are required</div>";
-                                            }
-
-                                            // Redirect after 0 seconds
-                                            echo "<meta http-equiv=\"refresh\" content=\"4;URL=create.php\">";
+                                            $select = "SELECT *FROM products";
+                                            $select_result = mysqli_query($conn, $select);
+                                            $data = mysqli_fetch_assoc($select_result);
                                         }
+                                        
                                         ?>
 
                                         <form class="row" method="POST" enctype="multipart/form-data" action="">
@@ -79,7 +58,7 @@
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="basic-icon-default-description2" class="input-group-text"><i class="bx bx-message-square-dots"></i></span>
-                                                        <input type="text" name="title" class="form-control" id="basic-icon-default-image" placeholder="Enter title" aria-label="" aria-describedby="basic-icon-default-image2" />
+                                                        <input type="text" name="title" readonly value="<?php echo $data['title']; ?>" class="form-control" id="basic-icon-default-image" placeholder="Enter title" aria-label="" aria-describedby="basic-icon-default-image2" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -89,17 +68,18 @@
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="basic-icon-default-description2" class="input-group-text"><i class="bx bx-message-square-dots"></i></span>
-                                                        <textarea name="description" class="form-control" id="basic-icon-default-description" placeholder="Enter description" aria-label="Enter description" aria-describedby="basic-icon-default-description2"></textarea>
+                                                        <textarea name="description" readonly class="form-control" id="basic-icon-default-description" placeholder="Enter description" aria-label="Enter description" aria-describedby="basic-icon-default-description2"><?php echo $data['title']; ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class="col-form-label" for="basic-icon-default-image">Image</label>
+                                                <label class="col-form-label" for="basic-icon-default-image">Image</label><br>
+                                                <img src="<?php echo '../uploads/'.$data['image']; ?>" alt="" width="100" height="100">  
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="basic-icon-default-image2" class="input-group-text"><i class="bx bx-image"></i></span>
-                                                        <input type="text" name="image" class="form-control" id="basic-icon-default-image" placeholder="Enter image URL from Flies" aria-label="" aria-describedby="basic-icon-default-image2" />
+                                                        <input type="text" name="image" readonly value="<?php echo $data['image']; ?>"   class="form-control" id="basic-icon-default-image" placeholder="Enter image URL from Flies" aria-label="" aria-describedby="basic-icon-default-image2" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -108,7 +88,7 @@
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="basic-icon-default-description2" class="input-group-text"><i class="bx bx-message-square-dots"></i></span>
-                                                        <input type="number" name="price" class="form-control" id="basic-icon-default-image" placeholder="Enter price" aria-label="" aria-describedby="basic-icon-default-image2" />
+                                                        <input type="number" readonly value="<?php echo $data['price']; ?>" name="price" class="form-control" id="basic-icon-default-image" placeholder="Enter price" aria-label="" aria-describedby="basic-icon-default-image2" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -118,7 +98,7 @@
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="basic-icon-default-image2" class="input-group-text"><i class="bx bx-image"></i></span>
-                                                        <input type="number" name="qty" class="form-control" id="basic-icon-default-image" placeholder="Enter qty" aria-label="" aria-describedby="basic-icon-default-image2" />
+                                                        <input type="number" readonly name="qty" value="<?php echo $data['qty']; ?>" class="form-control" id="basic-icon-default-image" placeholder="Enter qty" aria-label="" aria-describedby="basic-icon-default-image2" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -127,7 +107,7 @@
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="basic-icon-default-image2" class="input-group-text"><i class="bx bx-image"></i></span>
-                                                        <input type="number" name="discount" class="form-control" id="basic-icon-default-image" placeholder="Enter discount" aria-label="" aria-describedby="basic-icon-default-image2" />
+                                                        <input type="number"readonly name="discount" value="<?php echo $data['discount']; ?>" class="form-control" id="basic-icon-default-image" placeholder="Enter discount" aria-label="" aria-describedby="basic-icon-default-image2" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -135,16 +115,11 @@
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                                                 <label class="form-label" for="status">Status</label>
                                                 <div class="col-sm-10">
-                                                    <select name="status" class="form-control" id="status" required>
-                                                        <option value="0">Inactive</option>
-                                                        <option value="1">Active</option>
-                                                    </select>
+                                                    <p><?php echo htmlspecialchars($data['status'] == 1) ? 'Active' : 'In-Active'; ?></p>
                                                 </div>
                                             </div>
 
-                                            <div class="col-sm-10">
-                                                <button type="submit" name="save" class="btn btn-primary">Submit</button>
-                                            </div>
+                                            
                                         </form>
 
                                     </div>
