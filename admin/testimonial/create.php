@@ -18,30 +18,30 @@
                 <div class="content-wrapper">
                     <!-- Content -->
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">hero/</span> Add Hero Section</h4>
+                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Testimonials/</span> Add Testimonial</h4>
 
                         <div class="card mb-4">
                             <div class="card-header d-flex align-items-center justify-content-between">
-                            <h5 class="mb-0"><a class="btn btn-primary btn-sm " href="index.php" role="button"> Manage Hero</a></h5>
-                            <small class="text-muted float-end">Create a new hero section</small>
+                                <h5 class="mb-0"><a class="btn btn-primary btn-sm" href="index.php" role="button">Manage Testimonials</a></h5>
+                                <small class="text-muted float-end">Create a new testimonial</small>
                             </div>
                             <div class="card-body">
                                 <?php
                                 if (isset($_POST['save'])) {
-                                    $top_title = $_POST['top_title'];
-                                    $title = $_POST['title'];
-                                    $status = $_POST['status'];
+                                    $message = $_POST['message'];
+                                    $name = $_POST['name'];
+                                    $position = $_POST['position'];
 
-                                    if ($top_title != "" && $title != "" && $status != "") {
+                                    if ($message != "" && $name != "" && $position != "") {
                                         // Perform SQL insertion
-                                        $insert = "INSERT INTO hero (top_title, title, status) VALUES ('$top_title', '$title', '$status')";
+                                        $insert = "INSERT INTO testimonials (message, name, position) VALUES ('$message', '$name', '$position')";
                                         $result = mysqli_query($conn, $insert);
 
                                         if ($result) {
-                                            echo "<div class='alert alert-success'>Hero section created successfully.</div>";
+                                            echo "<div class='alert alert-success'>Testimonial created successfully.</div>";
                                             echo "<meta http-equiv=\"refresh\" content=\"2;URL=index.php\">";
                                         } else {
-                                            echo "<div class='alert alert-danger'>Failed to create hero section.</div>";
+                                            echo "<div class='alert alert-danger'>Failed to create testimonial.</div>";
                                             echo "<meta http-equiv=\"refresh\" content=\"2;URL=create.php\">";
                                         }
                                     } else {
@@ -55,25 +55,22 @@
 
                                 <form class="row" method="POST" action="">
                                     <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                        <label class="col-form-label" for="top_title">Top Title</label>
-                                        <input type="text" name="top_title" class="form-control" id="top_title" placeholder="Enter top title" required>
+                                        <label class="col-form-label" for="message">Message</label>
+                                        <textarea name="message" class="form-control" id="message" placeholder="Enter testimonial message" required></textarea>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                        <label class="col-form-label" for="title">Title</label>
-                                        <input type="text" name="title" class="form-control" id="title" placeholder="Enter title" required>
+                                        <label class="col-form-label" for="name">Name</label>
+                                        <input type="text" name="name" class="form-control" id="name" placeholder="Enter name" required>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                        <label class="form-label" for="status">Status</label>
-                                        <select name="status" class="form-control" id="status" required>
-                                            <option value="1">Active</option>
-                                            <option value="0">Inactive</option>
-                                        </select>
+                                        <label class="col-form-label" for="position">Position</label>
+                                        <input type="text" name="position" class="form-control" id="position" placeholder="Enter position" required>
                                     </div>
 
                                     <div class="col-sm-12">
-                                        <button type="submit" name="save" class="btn btn-primary">Create Hero Section</button>
+                                        <button type="submit" name="save" class="btn btn-primary">Create Testimonial</button>
                                     </div>
                                 </form>
                             </div>

@@ -18,12 +18,12 @@
         <div class="content-wrapper">
           <!-- Content -->
           <div class="container-xxl flex-grow-1 container-p-y">
-            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Categories /</span>Manage Categories</h4>
+            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Sliders /</span>Manage Sliders</h4>
 
             <!-- Basic Bootstrap Table -->
             <div class="card">
-              <h5 class="card-header">Manage Categories</h5>
-              <div class="table-responsive text-nowrap">
+            <h5 class="card-header"><a class="btn btn-primary btn-sm " href="create.php" role="button"> Add Sliders</a></h5>
+            <div class="table-responsive text-nowrap">
                 <table class="table">
                   <thead>
                     <tr>

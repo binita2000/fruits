@@ -30,8 +30,8 @@
                             <div class="col-xxl">
                                 <div class="card mb-4">
                                     <div class="card-header d-flex align-items-center justify-content-between">
-                                        <h5 class="mb-0">Add Fact</h5>
-                                        <small class="text-muted float-end">Add new fact</small>
+                                    <h5 class="mb-0"><a class="btn btn-primary btn-sm " href="index.php" role="button"> Manage facts</a></h5>
+                                    <small class="text-muted float-end">Add new fact</small>
                                     </div>
                                     <div class="card-body">
 
