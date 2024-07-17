@@ -177,12 +177,12 @@
 
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="facts/create.php" class="menu-link">
+                    <a href="hero/create.php" class="menu-link">
                         <div data-i18n="Without menu">Add Hero</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="facts/index.php" class="menu-link">
+                    <a href="hero/index.php" class="menu-link">
                         <div data-i18n="Without navbar">Manage Hero</div>
                     </a>
                 </li>
@@ -248,21 +248,22 @@
                 </li>
             </ul>
         </li>
+        <!-- Categories Section -->
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Setting</div>
+                <div data-i18n="Layouts">Category</div>
             </a>
 
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="Setting/create.php" class="menu-link">
-                        <div data-i18n="Without menu">Add Setting</div>
+                    <a href="categories/create.php" class="menu-link">
+                        <div data-i18n="Without menu">Add Category</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="Setting/index.php" class="menu-link">
-                        <div data-i18n="Without navbar">Manage Setting</div>
+                    <a href="categories/index.php" class="menu-link">
+                        <div data-i18n="Without navbar">Manage Category</div>
                     </a>
                 </li>
             </ul>
@@ -318,15 +319,15 @@
                     data-size="large"
                     data-show-count="true"
                     aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-                    >Star</a
-                  >
+                    >Star</a>
+                  
                 </li>
 
                 <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="assets/img/avatars/n.jpeg" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -335,11 +336,11 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="assets/img/avatars/n.jpeg " alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">John Doe</span>
+                            <span class="fw-semibold d-block">Neha Shrestha</span>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>
@@ -558,7 +559,7 @@
                         <div class="card-body">
                           <div class="card-title d-flex align-items-start justify-content-between">
                             <div class="avatar flex-shrink-0">
-                              <img src="assets/img/icons/unicons/paypal.png" alt="Credit Card" class="rounded" />
+                              <img src="assets/img/icons/unicons/esewa.png" alt="Credit Card" class="rounded" />
                             </div>
                             <div class="dropdown">
                               <button
@@ -829,11 +830,11 @@
                       <ul class="p-0 m-0">
                         <li class="d-flex mb-4 pb-1">
                           <div class="avatar flex-shrink-0 me-3">
-                            <img src="assets/img/icons/unicons/paypal.png" alt="User" class="rounded" />
+                            <img src="assets/img/icons/unicons/esewa.png" alt="User" class="rounded" />
                           </div>
                           <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                             <div class="me-2">
-                              <small class="text-muted d-block mb-1">Paypal</small>
+                              <small class="text-muted d-block mb-1">Esewa</small>
                               <h6 class="mb-0">Send money</h6>
                             </div>
                             <div class="user-progress d-flex align-items-center gap-1">
@@ -844,12 +845,12 @@
                         </li>
                         <li class="d-flex mb-4 pb-1">
                           <div class="avatar flex-shrink-0 me-3">
-                            <img src="assets/img/icons/unicons/wallet.png" alt="User" class="rounded" />
+                            <img src="assets/img/icons/unicons/fonepay.png" alt="User" class="rounded" />
                           </div>
                           <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                             <div class="me-2">
-                              <small class="text-muted d-block mb-1">Wallet</small>
-                              <h6 class="mb-0">Mac'D</h6>
+                              <small class="text-muted d-block mb-1">Fonepay</small>
+                              <h6 class="mb-0">Payment</h6>
                             </div>
                             <div class="user-progress d-flex align-items-center gap-1">
                               <h6 class="mb-0">+270.69</h6>
@@ -935,11 +936,9 @@
                     document.write(new Date().getFullYear());
                   </script>
                   , made with ❤️ by
-                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
                 </div>
                 <div>
                   <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
 
                   <a
                     href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"

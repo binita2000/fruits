@@ -1,6 +1,6 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="index.html" class="app-brand-link">
+        <a href="index.php" class="app-brand-link">
             <span class="app-brand-logo demo">
                 <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <defs>
@@ -48,7 +48,7 @@
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
         <li class="menu-item">
-            <a href="index.html" class="menu-link">
+            <a href="index.php" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
             </a>
@@ -119,18 +119,38 @@
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">contact</div>
+                <div data-i18n="Layouts">Contact</div>
             </a>
 
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="../contact/create.php" class="menu-link">
-                        <div data-i18n="Without menu">Add contact</div>
+                        <div data-i18n="Without menu">Add Contact</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="../contact/index.php" class="menu-link">
-                        <div data-i18n="Without navbar">Manage contact</div>
+                        <div data-i18n="Without navbar">Manage Contact</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- catogary Section -->
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div data-i18n="Layouts">Category</div>
+            </a>
+
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="../categories/create.php" class="menu-link">
+                        <div data-i18n="Without menu">Add Categories</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="../categories/index.php" class="menu-link">
+                        <div data-i18n="Without navbar">Manage Categories</div>
                     </a>
                 </li>
             </ul>
@@ -139,22 +159,23 @@
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">facts</div>
+                <div data-i18n="Layouts">Facts</div>
             </a>
 
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="../sliders/create.php" class="menu-link">
-                        <div data-i18n="Without menu">Add facts</div>
+                    <a href="../facts/create.php" class="menu-link">
+                        <div data-i18n="Without menu">Add Facts</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="../sliders/index.php" class="menu-link">
-                        <div data-i18n="Without navbar">Manage facts</div>
+                    <a href="../facts/index.php" class="menu-link">
+                        <div data-i18n="Without navbar">Manage Facts</div>
                     </a>
                 </li>
             </ul>
         </li>
+        <!-- Setting section -->
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
@@ -164,31 +185,32 @@
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="../setting/create.php" class="menu-link">
-                        <div data-i18n="Without menu">Add setting</div>
+                        <div data-i18n="Without menu">Add Setting</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="../setting/index.php" class="menu-link">
-                        <div data-i18n="Without navbar">Manage setting</div>
+                        <div data-i18n="Without navbar">Manage Setting</div>
                     </a>
                 </li>
             </ul>
         </li>
+        <!-- file section -->
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">file</div>
+                <div data-i18n="Layouts">File</div>
             </a>
 
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="../file/create.php" class="menu-link">
-                        <div data-i18n="Without menu">Add file</div>
+                        <div data-i18n="Without menu">Add File</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="../file/index.php" class="menu-link">
-                        <div data-i18n="Without navbar">Manage file</div>
+                        <div data-i18n="Without navbar">Manage File</div>
                     </a>
                 </li>
             </ul>
