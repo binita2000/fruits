@@ -147,6 +147,26 @@
                 </li>
             </ul>
         </li>
+        <!-- file section -->
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div data-i18n="Layouts">files</div>
+            </a>
+
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="file/create.php" class="menu-link">
+                        <div data-i18n="Without menu">Add file</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="file/index.php" class="menu-link">
+                        <div data-i18n="Without navbar">Manage file</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
         <!-- products section -->
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
