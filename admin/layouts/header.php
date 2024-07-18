@@ -1,7 +1,8 @@
 
 <?php  require('../config/config.php'); ?>
-<!DOCTYPE .php>
-<.php
+<!DOCTYPE .html
+>
+<html >
   lang="en"
   class="light-style layout-menu-fixed"
   dir="ltr"
