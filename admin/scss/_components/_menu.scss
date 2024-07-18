@@ -47,7 +47,7 @@
   pointer-events: none;
   z-index: 2;
   // Hide menu inner shadow in static layout
-  html:not(.layout-menu-fixed) & {
+  .php:not(.layout-menu-fixed) & {
     display: none !important;
   }
 }

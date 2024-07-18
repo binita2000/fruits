@@ -551,8 +551,8 @@ button.list-group-item-primary.active {
   fill: #696cff;
 }
 
-html:not([dir=rtl]) .border-primary,
-html[dir=rtl] .border-primary {
+.php:not([dir=rtl]) .border-primary,
+.php[dir=rtl] .border-primary {
   border-color: #696cff !important;
 }
 
@@ -736,8 +736,8 @@ a:hover {
 .bg-menu-theme.menu-vertical {
   box-shadow: 0 0.125rem 0.375rem 0 rgba(161, 172, 184, 0.12);
 }
-html:not(.layout-menu-collapsed) .bg-menu-theme .menu-inner .menu-item.open > .menu-link, .layout-menu-hover.layout-menu-collapsed .bg-menu-theme .menu-inner .menu-item.open > .menu-link,
-html:not(.layout-menu-collapsed) .bg-menu-theme .menu-inner .menu-item .menu-link:not(.active):hover,
+.php:not(.layout-menu-collapsed) .bg-menu-theme .menu-inner .menu-item.open > .menu-link, .layout-menu-hover.layout-menu-collapsed .bg-menu-theme .menu-inner .menu-item.open > .menu-link,
+.php:not(.layout-menu-collapsed) .bg-menu-theme .menu-inner .menu-item .menu-link:not(.active):hover,
 .layout-menu-hover.layout-menu-collapsed .bg-menu-theme .menu-inner .menu-item .menu-link:not(.active):hover {
   background-color: rgba(67, 89, 113, 0.04);
 }

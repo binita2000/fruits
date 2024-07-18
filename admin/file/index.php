@@ -54,12 +54,16 @@
                       ?>
                       <tr>
                         <th scope="row"><?php echo $i++; ?></th>
-                        <td><?php echo htmlspecialchars($data['title']); ?></td>
-                        <td><?php echo htmlspecialchars($data['description']); ?></td>
+                        <td><?php echo htmlspecialchars
+($data['title']); ?></td>
+                        <td><?php echo htmlspecialchars
+($data['description']); ?></td>
                         <td><img src="<?php  echo "../uploads/". $data['image']; ?>" width="100" height="100" alt=""></td>
 
-                        <td><?php echo htmlspecialchars($data['image']); ?></td>
-                        <td><?php echo htmlspecialchars($data['status'] == 1) ? 'Active' : 'In-Active'; ?></td>
+                        <td><?php echo htmlspecialchars
+($data['image']); ?></td>
+                        <td><?php echo htmlspecialchars
+($data['status'] == 1) ? 'Active' : 'In-Active'; ?></td>
                         <td>
                           <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">

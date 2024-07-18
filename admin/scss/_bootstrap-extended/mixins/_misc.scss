@@ -2,7 +2,7 @@
 // *******************************************************************************
 @mixin light-layout-only() {
   @if $dark-style {
-    html:not(.dark-style) {
+    .php:not(.dark-style) {
       @content;
     }
   } @else {
@@ -15,7 +15,7 @@
 
 @mixin ltr-only() {
   @if $rtl-support {
-    html:not([dir='rtl']) {
+    .php:not([dir='rtl']) {
       @content;
     }
   } @else {
@@ -25,7 +25,7 @@
 
 @mixin ltr-style() {
   @if $rtl-support {
-    html:not([dir='rtl']) & {
+    .php:not([dir='rtl']) & {
       @content;
     }
   } @else {

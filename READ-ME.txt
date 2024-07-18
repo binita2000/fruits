@@ -1,9 +1,9 @@
   =>  Template Name    : Fruitables - Vegetable Website Template
 
-  =>  Template Link    : https://htmlcodex.com/vegetable-website-template
+  =>  Template Link    : https://.phpcodex.com/vegetable-website-template
 
-  =>  Template License : https://htmlcodex.com/license (or read the LICENSE.txt file)
+  =>  Template License : https://.phpcodex.com/license (or read the LICENSE.txt file)
 
-  =>  Template Author  : HTML Codex
+  =>  Template Author  : .php Codex
 
-  =>  Author Website   : https://htmlcodex.com
+  =>  Author Website   : https://.phpcodex.com

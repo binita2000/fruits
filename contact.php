@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,6 +31,10 @@
     </head>
 
     <>
+=======
+<?php require ('includes/header.php'); ?>
+
+>>>>>>> 8a9dcb1eba7d2d71b4c5823db6f847ce9d71311a
 
         <!-- Spinner Start -->
         <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
@@ -39,6 +44,7 @@
 
 
         <!-- Navbar start -->
+<<<<<<< HEAD
         <div class="container-fluid fixed-top">
             <div class="container topbar bg-primary d-none d-lg-block">
                 <div class="d-flex justify-content-between">
@@ -89,6 +95,10 @@
                 </nav>
             </div>
         </div>
+=======
+        <?php require ('includes/navbar.php'); ?>
+
+>>>>>>> 8a9dcb1eba7d2d71b4c5823db6f847ce9d71311a
         <!-- Navbar End -->
 <!-- Login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -272,6 +282,7 @@
 
 
         <!-- Footer Start -->
+<<<<<<< HEAD
         <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
             <div class="container py-5">
                 <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5) ;">
@@ -380,3 +391,6 @@
     </body>
 
 </html>
+=======
+        <?php require ('includes/footer.php'); ?>
+>>>>>>> 8a9dcb1eba7d2d71b4c5823db6f847ce9d71311a

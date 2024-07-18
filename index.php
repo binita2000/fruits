@@ -1,7 +1,8 @@
-<?php require('includes/header.php'); ?>
+<?php require ('includes/header.php'); ?>
 
 <body>
 
+<<<<<<< HEAD
 <?php
     $settings = "SELECT * FROM settings";
     $s_result = mysqli_query($conn, $settings);
@@ -19,16 +20,37 @@
 ?>
 
 
+=======
+    <?php
+    $settings = "SELECT * FROM settings";
+    $s_result = mysqli_query($conn, $settings);
+
+    // Initialize variables to store individual data
+    $logo = '';
+    $testi = '';
+
+    while ($s_data = mysqli_fetch_assoc($s_result)) {
+        if ($s_data['site_key'] === 'logo') {
+            $logo = $s_data['site_value'];
+        }
+        if ($s_data['site_key'] === 'testi') {
+            $testi = $s_data['site_value'];
+        }
+    }
+    ?>
+>>>>>>> 8a9dcb1eba7d2d71b4c5823db6f847ce9d71311a
+
 
     <!-- Spinner Start -->
-    <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+    <div id="spinner"
+        class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" role="status"></div>
     </div>
     <!-- Spinner End -->
 
 
     <!-- Navbar start -->
-    <?php require('includes/navbar.php'); ?>
+    <?php require ('includes/navbar.php'); ?>
 
     <!-- Navbar End -->
 
@@ -55,7 +77,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <small>Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Register here</a></small>
+                    <small>Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal"
+                            data-bs-dismiss="modal">Register here</a></small>
                 </div>
             </div>
         </div>
@@ -118,7 +141,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <small>Already have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Login here</a></small>
+                    <small>Already have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal"
+                            data-bs-dismiss="modal">Login here</a></small>
                 </div>
             </div>
         </div>
@@ -136,7 +160,8 @@
                 </div>
                 <div class="modal-body d-flex align-items-center">
                     <div class="input-group w-75 mx-auto d-flex">
-                        <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                        <input type="search" class="form-control p-3" placeholder="keywords"
+                            aria-describedby="search-icon-1">
                         <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
                     </div>
                 </div>
@@ -162,8 +187,11 @@
                     <h4 class="mb-3 text-secondary"><?php echo $hero_data['top_title']; ?></h4>
                     <h1 class="mb-5 display-3 text-primary"><?php echo $hero_data['title']; ?></h1>
                     <div class="position-relative mx-auto">
-                        <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="number" placeholder="Search">
-                        <button type="submit" class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100" style="top: 0; right: 25%;">Submit Now</button>
+                        <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="number"
+                            placeholder="Search">
+                        <button type="submit"
+                            class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100"
+                            style="top: 0; right: 25%;">Submit Now</button>
                     </div>
                 </div>
                 <!-- <div class="col-md-12 col-lg-5">
@@ -184,7 +212,7 @@
                             <?php
 
                             while ($slider = mysqli_fetch_assoc($hero_result)) {
-                            ?>
+                                ?>
                                 <div class="carousel-item active">
                                     <img src="<?php echo 'admin/uploads/' . $slider['image'] ?>" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
@@ -199,7 +227,7 @@
                             }
 
 
-                    ?>
+                            ?>
 
 
                     </div>
@@ -264,28 +292,32 @@
                                         $categories = "SELECT *FROM products";
                                         $result = mysqli_query($conn, $categories);
                                         while ($data = mysqli_fetch_array($result)) {
-                                        ?>
+                                            ?>
                                             <div class="border border-primary rounded position-relative vesitable-item">
                                                 <div class="fruite-img">
-                                                    <img src="<?php echo 'admin/uploads/' . $data['image']; ?>" class="img-fluid w-100 rounded-top" alt="">
+                                                    <img src="<?php echo 'admin/uploads/' . $data['image']; ?>"
+                                                        class="img-fluid w-100 rounded-top" alt="">
                                                 </div>
                                                 <div class="p-4 rounded-bottom">
                                                     <h4><?php echo $data['title'] ?></h4>
                                                     <div class="description">
                                                         <p><?php echo $data['description'] ?></p>
-                                                        
+
                                                     </div>
-                                                    <p class="text-dark fs-5 fw-bold mb-0">Rs <?php echo $data['price'] ?> / kg</p>
-                                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                                                            cart</a>
+                                                    <p class="text-dark fs-5 fw-bold mb-0">Rs <?php echo $data['price'] ?> /
+                                                        kg</p>
+                                                    <a href="#"
+                                                        class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                                            class="fa fa-shopping-bag me-2 text-primary"></i> Add to
+                                                        cart</a>
                                                 </div>
                                             </div>
-                                        <?php
+                                            <?php
                                         }
 
                                         ?>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -309,10 +341,11 @@
                     $categories = "SELECT *FROM categories";
                     $result = mysqli_query($conn, $categories);
                     while ($data = mysqli_fetch_array($result)) {
-                    ?>
+                        ?>
                         <div class="border border-primary rounded position-relative vesitable-item">
                             <div class="fruite-img">
-                                <img src="<?php echo 'admin/uploads/' . $data['image']; ?>" class="img-fluid w-100 rounded-top" alt="">
+                                <img src="<?php echo 'admin/uploads/' . $data['image']; ?>"
+                                    class="img-fluid w-100 rounded-top" alt="">
                             </div>
                             <div class="p-4 rounded-bottom">
                                 <h4><?php echo $data['title'] ?></h4>
@@ -321,7 +354,7 @@
                                 </div>
                             </div>
                         </div>
-                    <?php
+                        <?php
                     }
 
                     ?>
@@ -341,10 +374,11 @@
                     $categories = "SELECT *FROM categories";
                     $result = mysqli_query($conn, $categories);
                     while ($data = mysqli_fetch_array($result)) {
-                    ?>
+                        ?>
                         <div class="border border-primary rounded position-relative vesitable-item">
                             <div class="fruite-img">
-                                <img src="<?php echo 'admin/uploads/' . $data['image']; ?>" class="img-fluid w-100 rounded-top" alt="">
+                                <img src="<?php echo 'admin/uploads/' . $data['image']; ?>"
+                                    class="img-fluid w-100 rounded-top" alt="">
                             </div>
                             <div class="p-4 rounded-bottom">
                                 <h4><?php echo $data['title'] ?></h4>
@@ -353,7 +387,7 @@
                                 </div>
                             </div>
                         </div>
-                    <?php
+                        <?php
                     }
 
                     ?>
@@ -416,7 +450,8 @@
                 <div class="owl-carousel testimonial-carousel">
                     <div class="testimonial-item img-border-radius bg-light rounded p-4">
                         <div class="position-relative">
-                            <i class="fa fa-quote-right fa-2x text-secondary position-absolute" style="bottom: 30px; right: 0;"></i>
+                            <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                                style="bottom: 30px; right: 0;"></i>
                             <div class="mb-4 pb-4 border-bottom border-secondary">
                                 <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
                                     industry's standard dummy text ever since the 1500s,
@@ -424,7 +459,8 @@
                             </div>
                             <div class="d-flex align-items-center flex-nowrap">
                                 <div class="bg-secondary rounded">
-                                    <img src="img/aarti1.jfif" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="">
+                                    <img src="img/aarti1.jfif" class="img-fluid rounded"
+                                        style="width: 100px; height: 100px;" alt="">
                                 </div>
                                 <div class="ms-4 d-block">
                                     <h4 class="text-dark">Aarati Khadka</h4>
@@ -442,7 +478,8 @@
                     </div>
                     <div class="testimonial-item img-border-radius bg-light rounded p-4">
                         <div class="position-relative">
-                            <i class="fa fa-quote-right fa-2x text-secondary position-absolute" style="bottom: 30px; right: 0;"></i>
+                            <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                                style="bottom: 30px; right: 0;"></i>
                             <div class="mb-4 pb-4 border-bottom border-secondary">
                                 <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
                                     industry's standard dummy text ever since the 1500s,
@@ -450,7 +487,8 @@
                             </div>
                             <div class="d-flex align-items-center flex-nowrap">
                                 <div class="bg-secondary rounded">
-                                    <img src="img/bi.jfif" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="">
+                                    <img src="img/bi.jfif" class="img-fluid rounded"
+                                        style="width: 100px; height: 100px;" alt="">
                                 </div>
                                 <div class="ms-4 d-block">
                                     <h4 class="text-dark">Binita Neupane</h4>
@@ -468,7 +506,8 @@
                     </div>
                     <div class="testimonial-item img-border-radius bg-light rounded p-4">
                         <div class="position-relative">
-                            <i class="fa fa-quote-right fa-2x text-secondary position-absolute" style="bottom: 30px; right: 0;"></i>
+                            <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                                style="bottom: 30px; right: 0;"></i>
                             <div class="mb-4 pb-4 border-bottom border-secondary">
                                 <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
                                     industry's standard dummy text ever since the 1500s,
@@ -476,7 +515,8 @@
                             </div>
                             <div class="d-flex align-items-center flex-nowrap">
                                 <div class="bg-secondary rounded">
-                                    <img src="img/testimonial-1.jpg" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="">
+                                    <img src="img/testimonial-1.jpg" class="img-fluid rounded"
+                                        style="width: 100px; height: 100px;" alt="">
                                 </div>
                                 <div class="ms-4 d-block">
                                     <h4 class="text-dark">Client Name</h4>
@@ -497,4 +537,4 @@
         </div>
         <!-- Tastimonial End -->
 
-        <?php require('includes/footer.php'); ?>
+        <?php require ('includes/footer.php'); ?>

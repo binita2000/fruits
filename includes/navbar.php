@@ -33,15 +33,15 @@
                         <a href="index.php" class="nav-item nav-link active">Home</a>
                         <a href="shop.php" class="nav-item nav-link">Shop</a>
                         <!-- <a href="shop-detail.php" class="nav-item nav-link">Shop Detail</a> -->
-                        <div class="nav-item dropdown">
+                        <!-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0 bg-secondary rounded-0">
                                 <a href="cart.php" class="dropdown-item">Cart</a>
-                                <a href="chackout.php" class="dropdown-item">Checkout</a>
+                                <a href="checkout.php" class="dropdown-item">Checkout</a>
                                 <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                                 <a href="404.php" class="dropdown-item">404 Page</a>
                             </div>
-                        </div>
+                        </div> -->
                         <a href="contact.php" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="d-flex m-3 me-0">
