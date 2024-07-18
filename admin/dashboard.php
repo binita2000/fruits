@@ -288,6 +288,35 @@
                 </li>
             </ul>
         </li>
+        <!-- testimonial
+          Section -->
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div data-i18n="Layouts">Testimonial
+
+                </div>
+            </a>
+
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="testimonial
+                    /create.php" class="menu-link">
+                        <div data-i18n="Without menu">Add Testimonial
+
+                        </div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="testimonial
+                    /index.php" class="menu-link">
+                        <div data-i18n="Without navbar">Manage Testimonial
+
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </li>
         <!-- Categories Section -->
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
