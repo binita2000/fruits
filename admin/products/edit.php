@@ -80,17 +80,20 @@
                                 <form class="row" method="POST" action="">
                                     <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                                         <label class="col-form-label" for="title">Title</label>
-                                        <input type="text" name="title" class="form-control" id="title" placeholder="Enter title" value="<?php echo .phpspecialchars($title); ?>" required>
+                                        <input type="text" name="title" class="form-control" id="title" placeholder="Enter title" value="<?php echo htmlspecialchars
+($title); ?>" required>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                                         <label class="col-form-label" for="description">Description</label>
-                                        <textarea name="description" class="form-control" id="description" placeholder="Enter description" rows="4" required><?php echo .phpspecialchars($description); ?></textarea>
+                                        <textarea name="description" class="form-control" id="description" placeholder="Enter description" rows="4" required><?php echo htmlspecialchars
+($description); ?></textarea>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                                         <label class="col-form-label" for="image">Image URL</label>
-                                        <input type="text" name="image" class="form-control" id="image" placeholder="Enter image URL" value="<?php echo .phpspecialchars($image); ?>" required>
+                                        <input type="text" name="image" class="form-control" id="image" placeholder="Enter image URL" value="<?php echo htmlspecialchars
+($image); ?>" required>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-sm-12 mb-3">

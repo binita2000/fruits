@@ -44,10 +44,14 @@
                     ?>
                     <tr>
                       <th scope="row"><?php echo $i++; ?></th>
-                      <td><img src="<?php echo .phpspecialchars($data['icon']); ?>" alt="Icon" width="50" height="50"></td>
-                      <td><?php echo .phpspecialchars($data['title']); ?></td>
-                      <td><?php echo .phpspecialchars($data['number']); ?></td>
-                      <td><?php echo .phpspecialchars($data['status'] == 2) ? 'Completed' : ($data['status'] == 1 ? 'In Progress' : 'Pending'); ?></td>
+                      <td><img src="<?php echo htmlspecialchars
+($data['icon']); ?>" alt="Icon" width="50" height="50"></td>
+                      <td><?php echo htmlspecialchars
+($data['title']); ?></td>
+                      <td><?php echo htmlspecialchars
+($data['number']); ?></td>
+                      <td><?php echo htmlspecialchars
+($data['status'] == 2) ? 'Completed' : ($data['status'] == 1 ? 'In Progress' : 'Pending'); ?></td>
                       <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">

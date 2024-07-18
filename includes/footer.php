@@ -67,7 +67,7 @@
                         <p>Email:onlinemarketplace@gmail.com</p>
                         <p>Phone:9811111111</p>
                         <p>Payment Accepted</p>
-                        <img src="img/pay.png" class="img-fluid" alt="">
+                        <img src="img/pp.png" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
@@ -84,11 +84,8 @@
                             Place</a>, All right reserved.</span>
                 </div>
                 <div class="col-md-6 my-auto text-center text-md-end text-white">
-                    <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                    <!--/*** you can purchase the Credit Removal License from "https://.phpcodex.com/credit-removal". ***/-->
-                    Designed By <a class="border-bottom" href="https://.phpcodex.com">.php Codex</a> Distributed By <a
-                        class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                    
+                    Designed By <a class="border-bottom" href="https://xdezo.com/">XDEZO</a> 
                 </div>
             </div>
         </div>

@@ -43,9 +43,12 @@
                                             ?>
                                             <tr>
                                                 <th scope="row"><?php echo $i++; ?></th>
-                                                <td><?php echo .phpspecialchars($data['top_title']); ?></td>
-                                                <td><?php echo .phpspecialchars($data['title']); ?></td>
-                                                <td><?php echo .phpspecialchars($data['status'] == 1 ? 'Active' : 'Inactive'); ?></td>
+                                                <td><?php echo htmlspecialchars
+($data['top_title']); ?></td>
+                                                <td><?php echo htmlspecialchars
+($data['title']); ?></td>
+                                                <td><?php echo htmlspecialchars
+($data['status'] == 1 ? 'Active' : 'Inactive'); ?></td>
                                                 <td>
                                                     <div class="dropdown">
                                                         <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">

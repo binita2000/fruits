@@ -44,9 +44,12 @@
                     ?>
                     <tr>
                       <th scope="row"><?php echo $i++; ?></th>
-                      <td><?php echo .phpspecialchars($data['title']); ?></td>
-                      <td><?php echo .phpspecialchars($data['description']); ?></td>
-                      <td><img src="<?php echo .phpspecialchars('../uploads/'.$data['image']); ?>" alt="Category Image" style="width: 100px; height: auto;"></td>
+                      <td><?php echo htmlspecialchars
+($data['title']); ?></td>
+                      <td><?php echo htmlspecialchars
+($data['description']); ?></td>
+                      <td><img src="<?php echo htmlspecialchars
+('../uploads/'.$data['image']); ?>" alt="Category Image" style="width: 100px; height: auto;"></td>
                       <td><?php echo ($data['status'] == 1) ? 'Active' : 'In-Active'; ?></td>
                       <td>
                         <div class="dropdown">
