@@ -2,19 +2,23 @@
 
 <body>
 
-    <?php
-    $settings = "SELECT *FROM settings";
+<?php
+    $settings = "SELECT * FROM settings";
     $s_result = mysqli_query($conn, $settings);
+    $logo = '';
+    $testi = '';
+
     while ($s_data = mysqli_fetch_array($s_result)) {
-        if ($s_data['site_key' == 'logo']) {
+        if ($s_data['site_key'] == 'logo') {
             $logo = $s_data['site_value'];
         }
-        if ($s_data['site_key' == 'testimonials_title']) {
+        if ($s_data['site_key'] == 'testimonials_title') {
             $testi = $s_data['site_value'];
         }
     }
+?>
 
-    ?>
+
 
     <!-- Spinner Start -->
     <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
