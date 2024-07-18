@@ -22,8 +22,8 @@
 
             <!-- Basic Bootstrap Table -->
             <div class="card">
-              <h5 class="card-header">Manage products</h5>
-              <div class="table-responsive text-nowrap">
+            <h5 class="card-header"><a class="btn btn-primary btn-sm " href="create.php" role="button"> Add Hero</a></h5>
+            <div class="table-responsive text-nowrap">
                 <table class="table">
                   <thead>
                     <tr>

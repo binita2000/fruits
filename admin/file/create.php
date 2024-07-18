@@ -26,8 +26,8 @@
                             <div class="col-xxl">
                                 <div class="card mb-4">
                                     <div class="card-header d-flex align-items-center justify-content-between">
-                                        <h5 class="mb-0">Basic with Icons</h5>
-                                        <small class="text-muted float-end">Merged input group</small>
+                                    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Facts/</span> Add Facts</h4>
+                                    <small class="text-muted float-end">Merged input group</small>
                                     </div>
                                     <div class="card-body">
                                         <?php

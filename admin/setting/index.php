@@ -22,7 +22,7 @@
 
                         <!-- Basic Bootstrap Table -->
                         <div class="card">
-                            <h5 class="card-header">Manage settings Sections</h5>
+                        <h5 class="card-header"><a class="btn btn-primary btn-sm " href="create.php" role="button"> Add Setting</a></h5>
                             <div class="table-responsive text-nowrap">
                                 <table class="table">
                                     <thead>

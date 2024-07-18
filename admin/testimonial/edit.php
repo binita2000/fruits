@@ -18,7 +18,7 @@
                 <div class="content-wrapper">
                     <!-- Content -->
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Categories/</span> Edit Category</h4>
+                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Testimonials/</span> Edit Testimonial</h4>
 
                         <!-- Basic Layout & Basic with Icons -->
                         <div class="row">
@@ -26,45 +26,46 @@
                             <div class="col-xxl">
                                 <div class="card mb-4">
                                     <div class="card-header d-flex align-items-center justify-content-between">
-                                        <h5 class="mb-0">Edit Category</h5>
-                                        <small class="text-muted float-end">Category Details</small>
+                                        <h5 class="mb-0">Edit Testimonial</h5>
+                                        <small class="text-muted float-end">Testimonial Details</small>
                                     </div>
                                     <div class="card-body">
 
                                         <?php
-                                        $title = $description = $image = $status = "";
+                                        // Database connection
+                                   
+
+                                        $message = $image = $name = $position = $status = "";
 
                                         if (isset($_GET['id'])) {
                                             $id = $_GET['id'];
 
-                                            $sql = "SELECT * FROM categories WHERE id=$id";
+                                            $sql = "SELECT * FROM testimonial WHERE id=$id";
                                             $result = mysqli_query($conn, $sql);
                                             if ($row = mysqli_fetch_assoc($result)) {
-                                                $title = $row['title'];
-                                                $description = $row['description'];
+                                                $message = $row['message'];
                                                 $image = $row['image'];
-                                                $status = $row['status'];
+                                                $name = $row['name'];
+                                                $position = $row['position'];
                                             }
                                         }
 
                                         if (isset($_POST['save'])) {
-                                            $title = $_POST['title'];
-                                            $description = $_POST['description'];
-                                            $status = $_POST['status'];
+                                            $message = $_POST['message'];
+                                            $name = $_POST['name'];
+                                            $position = $_POST['position'];
+                                            $image = $_POST['image'];
 
-                                            if (!empty($_FILES['image']['name'])) {
-                                                $image = 'uploads/' . basename($_FILES['image']['name']);
-                                                move_uploaded_file($_FILES['image']['tmp_name'], $image);
-                                            }
+                                                             
 
-                                            if ($title != "" && $description != "" && $status != "") {
-                                                $update = "UPDATE categories SET title='$title', description='$description', image='$image', status='$status' WHERE id=$id";
+                                            if ($message != "" && $name != "" && $position != "" && $image != "" ) {
+                                                $update = "UPDATE testimonial SET message='$message', image='$image', name='$name', position='$position' WHERE id=$id";
                                                 $result = mysqli_query($conn, $update);
                                                 if ($result) {
-                                                    echo "<div class='alert alert-success'>Category Updated Successfully</div>";
-                                                    echo "<meta http-equiv=\"refresh\" content=\"2;URL=index.php\">";
+                                                    echo "<div class='alert alert-success'>Testimonial Updated Successfully</div>";
+                                                    echo "<meta http-equiv='refresh' content='2;URL=index.php'>";
                                                 } else {
-                                                    echo "<div class='alert alert-danger'>Failed to Update Category</div>";
+                                                    echo "<div class='alert alert-danger'>Failed to Update Testimonial</div>";
                                                 }
                                             } else {
                                                 echo "<div class='alert alert-danger'>All fields are required</div>";
@@ -74,21 +75,11 @@
 
                                         <form class="row" method="POST" enctype="multipart/form-data" action="">
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class="col-form-label" for="basic-icon-default-title">Title</label>
+                                                <label class="col-form-label" for="basic-icon-default-message">Message</label>
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
-                                                        <span id="basic-icon-default-title2" class="input-group-text"><i class="bx bx-book"></i></span>
-                                                        <input type="text" name="title" class="form-control" id="basic-icon-default-title" placeholder="Enter category title" aria-label="Enter category title" aria-describedby="basic-icon-default-title2" value="<?php echo $title; ?>" />
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class="col-form-label" for="basic-icon-default-description">Description</label>
-                                                <div class="col-sm-10">
-                                                    <div class="input-group input-group-merge">
-                                                        <span id="basic-icon-default-description2" class="input-group-text"></span>
-                                                        <textarea name="description" class="form-control" id="basic-icon-default-description" placeholder="Enter description" aria-label="Enter description" aria-describedby="basic-icon-default-description2"><th scope="row"><?php echo $i++; ?></textarea>
+                                                        <span id="basic-icon-default-message2" class="input-group-text"><i class="bx bx-message-square-dots"></i></span>
+                                                        <textarea name="message" class="form-control" id="basic-icon-default-message" placeholder="Enter message" aria-label="Enter message" aria-describedby="basic-icon-default-message2"><?php echo $message; ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -98,21 +89,33 @@
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="basic-icon-default-image2" class="input-group-text"></span>
-                                                        <input type="file" name="image" id="basic-icon-default-image" class="form-control" aria-label="Upload image" aria-describedby="basic-icon-default-image2" />
+                                                        <input type="text" name="image" value="<?php echo $image; ?>" id="basic-icon-default-image" class="form-control" aria-label="Upload image" aria-describedby="basic-icon-default-image2" />
                                                     </div>
-                                                    <img src="<?php echo $image; ?>" alt="Current Image" style="width: 100px; height: auto; margin-top: 10px;">
+                                                    <img src="<?php echo '../uploads/'. $image; ?>" alt="Current Image" style="width: 100px; height: auto; margin-top: 10px;">
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class="form-label" for="status">Status</label>
+                                                <label class="col-form-label" for="basic-icon-default-name">Name</label>
                                                 <div class="col-sm-10">
-                                                    <select name="status" class="form-control" id="status" required>
-                                                        <option value="1" <?php if ($status == 1) echo "selected"; ?>>Active</option>
-                                                        <option value="0" <?php if ($status == 0) echo "selected"; ?>>Inactive</option>
-                                                    </select>
+                                                    <div class="input-group input-group-merge">
+                                                        <span id="basic-icon-default-name2" class="input-group-text"></span>
+                                                        <input type="text" name="name" class="form-control" id="basic-icon-default-name" placeholder="Enter name" aria-label="Enter name" aria-describedby="basic-icon-default-name2" value="<?php echo $name; ?>" />
+                                                    </div>
                                                 </div>
                                             </div>
+
+                                            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                                                <label class="col-form-label" for="basic-icon-default-position">position</label>
+                                                <div class="col-sm-10">
+                                                    <div class="input-group input-group-merge">
+                                                        <span id="basic-icon-default-position2" class="input-group-text"></span>
+                                                        <input type="text" name="position" class="form-control" id="basic-icon-default-position" placeholder="Enter position" aria-label="Enter position" aria-describedby="basic-icon-default-position2" value="<?php echo $position; ?>" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                           
 
                                             <div class="col-sm-10">
                                                 <button type="submit" name="save" class="btn btn-primary">Submit</button>
@@ -120,7 +123,6 @@
                                         </form>
                                         <!-- / Content -->
 
-                                        <?php require('../layouts/footer.php'); ?>
                                     </div>
                                 </div>
                             </div>
@@ -130,7 +132,9 @@
                     <!-- / Content wrapper -->
                 </div>
                 <!-- / Layout container -->
+                <?php require('../layouts/footer.php'); ?>
             </div>
         </div>
     </div>
 </body>
+</html>

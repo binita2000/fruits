@@ -215,6 +215,26 @@
                 </li>
             </ul>
         </li>
+        <!-- testimonial section -->
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div data-i18n="Layouts">testimonial</div>
+            </a>
+
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="../testimonial/create.php" class="menu-link">
+                        <div data-i18n="Without menu">Add testimonial</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="../testimonial/index.php" class="menu-link">
+                        <div data-i18n="Without navbar">Manage testimonial</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
         <!-- file section -->
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">

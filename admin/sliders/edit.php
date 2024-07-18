@@ -88,7 +88,7 @@
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="basic-icon-default-description2" class="input-group-text"></span>
-                                                        <textarea name="description" class="form-control" id="basic-icon-default-description" placeholder="Enter description" aria-label="Enter description" aria-describedby="basic-icon-default-description2"><?php echo $description; ?></textarea>
+                                                        <textarea name="description" class="form-control" id="basic-icon-default-description" placeholder="Enter description" aria-label="Enter description" aria-describedby="basic-icon-default-description2"><th scope="row"><?php echo $i++; ?></th></textarea>
                                                     </div>
                                                 </div>
                                             </div>
