@@ -27,80 +27,109 @@
                                 <div class="card mb-4">
                                     <div class="card-header d-flex align-items-center justify-content-between">
                                         <h5 class="mb-0">Edit Category</h5>
-                                        <small class="text-muted float-end">Category Details</small>
+                                        <small class="text-muted float-end">Modify category details</small>
                                     </div>
                                     <div class="card-body">
 
                                         <?php
-                                        $title = $description = $image = $status = "";
+                                        // Initialize variables
+                                        $title = $description = $status = "";
+                                        $image = "";
 
+                                        // Check if 'id' parameter is set in the URL
                                         if (isset($_GET['id'])) {
                                             $id = $_GET['id'];
 
+                                            // Retrieve category details from the database
                                             $sql = "SELECT * FROM categories WHERE id=$id";
                                             $result = mysqli_query($conn, $sql);
+
+                                            // Check if category exists
                                             if ($row = mysqli_fetch_assoc($result)) {
                                                 $title = $row['title'];
                                                 $description = $row['description'];
                                                 $image = $row['image'];
                                                 $status = $row['status'];
-                                            }
-                                        }
 
-                                        if (isset($_POST['save'])) {
-                                            $title = $_POST['title'];
-                                            $description = $_POST['description'];
-                                            $status = $_POST['status'];
+                                                // Process form submission
+                                                if (isset($_POST['save'])) {
+                                                    $title = $_POST['title'];
+                                                    $description = $_POST['description'];
+                                                    $status = $_POST['status'];
 
-                                            if (!empty($_FILES['image']['name'])) {
-                                                $image = 'uploads/' . basename($_FILES['image']['name']);
-                                                move_uploaded_file($_FILES['image']['tmp_name'], $image);
-                                            }
+                                                    // Handle image upload if a new image is selected
+                                                    if (!empty($_FILES["image"]["name"])) {
+                                                        $target_dir = "../uploads/";
+                                                        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                                                        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+                                                        $uploadOk = 1;
 
-                                            if ($title != "" && $description != "" && $status != "") {
-                                                $update = "UPDATE categories SET title='$title', description='$description', image='$image', status='$status' WHERE id=$id";
-                                                $result = mysqli_query($conn, $update);
-                                                if ($result) {
-                                                    echo "<div class='alert alert-success'>Category Updated Successfully</div>";
-                                                    echo "<meta http-equiv=\"refresh\" content=\"2;URL=index.php\">";
-                                                } else {
-                                                    echo "<div class='alert alert-danger'>Failed to Update Category</div>";
+                                                        // Check if the file is an actual image or fake image
+                                                        $check = getimagesize($_FILES["image"]["tmp_name"]);
+                                                        if ($check !== false) {
+                                                            // Attempt to move the uploaded file to the specified directory
+                                                            if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                                                                $image = $target_file;
+                                                            } else {
+                                                                echo "<div class='alert alert-danger'>Sorry, there was an error uploading your file.</div>";
+                                                                $uploadOk = 0;
+                                                            }
+                                                        } else {
+                                                            echo "<div class='alert alert-danger'>File is not an image.</div>";
+                                                            $uploadOk = 0;
+                                                        }
+                                                    }
+
+                                                    // Update the category in the database
+                                                    $update = "UPDATE categories SET title='$title', description='$description', image='$image', status='$status' WHERE id=$id";
+                                                    $result_update = mysqli_query($conn, $update);
+
+                                                    // Check if update was successful
+                                                    if ($result_update) {
+                                                        echo "<div class='alert alert-success'>Category is Updated</div>";
+                                                        echo "<meta http-equiv=\"refresh\" content=\"2;URL=index.php\">";
+                                                    } else {
+                                                        echo "<div class='alert alert-danger'>Category is not Updated</div>";
+                                                        echo "<meta http-equiv=\"refresh\" content=\"2;URL=edit.php?id=$id\">";
+                                                    }
                                                 }
                                             } else {
-                                                echo "<div class='alert alert-danger'>All fields are required</div>";
+                                                echo "<div class='alert alert-danger'>Category not found.</div>";
+                                                echo "<meta http-equiv=\"refresh\" content=\"2;URL=index.php\">";
                                             }
+                                        } else {
+                                            echo "<div class='alert alert-danger'>Missing category ID parameter.</div>";
+                                            echo "<meta http-equiv=\"refresh\" content=\"2;URL=index.php\">";
                                         }
                                         ?>
 
+                                        <!-- Category edit form -->
                                         <form class="row" method="POST" enctype="multipart/form-data" action="">
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class="col-form-label" for="basic-icon-default-title">Title</label>
+                                                <label class="col-form-label" for="title">Title</label>
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
-                                                        <span id="basic-icon-default-title2" class="input-group-text"><i class="bx bx-book"></i></span>
-                                                        <input type="text" name="title" class="form-control" id="basic-icon-default-title" placeholder="Enter category title" aria-label="Enter category title" aria-describedby="basic-icon-default-title2" value="<?php echo $title; ?>" />
+                                                        <input type="text" name="title" class="form-control" id="title" placeholder="Enter title" value="<?php echo $title; ?>" />
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class="col-form-label" for="basic-icon-default-description">Description</label>
+                                                <label class="col-form-label" for="description">Description</label>
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
-                                                        <span id="basic-icon-default-description2" class="input-group-text"></span>
-                                                        <textarea name="description" class="form-control" id="basic-icon-default-description" placeholder="Enter description" aria-label="Enter description" aria-describedby="basic-icon-default-description2"><?php echo $description; ?></textarea>
+                                                        <textarea name="description" class="form-control" id="description" placeholder="Enter description"><?php echo $description; ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class="form-label" for="basic-icon-default-image">Image</label>
+                                                <label class="form-label" for="image">Image</label>
                                                 <div class="col-sm-10">
-                                                    <div class="input-group input-group-merge">
-                                                        <span id="basic-icon-default-image2" class="input-group-text"></span>
-                                                        <input type="file" name="image" id="basic-icon-default-image" class="form-control" aria-label="Upload image" aria-describedby="basic-icon-default-image2" />
-                                                    </div>
-                                                    <img src="<?php echo $image; ?>" alt="Current Image" style="width: 100px; height: auto; margin-top: 10px;">
+                                                    <input type="file" name="image" class="form-control" id="image" />
+                                                    <?php if (!empty($image)) { ?>
+                                                        <img src="<?php echo $image; ?>" alt="Category Image" style="max-width: 100px; margin-top: 10px;">
+                                                    <?php } ?>
                                                 </div>
                                             </div>
 
@@ -108,8 +137,8 @@
                                                 <label class="form-label" for="status">Status</label>
                                                 <div class="col-sm-10">
                                                     <select name="status" class="form-control" id="status" required>
-                                                        <option value="1" <?php if ($status == 1) echo "selected"; ?>>Active</option>
                                                         <option value="0" <?php if ($status == 0) echo "selected"; ?>>Inactive</option>
+                                                        <option value="1" <?php if ($status == 1) echo "selected"; ?>>Active</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -118,19 +147,20 @@
                                                 <button type="submit" name="save" class="btn btn-primary">Submit</button>
                                             </div>
                                         </form>
-                                        <!-- / Content -->
+                                        <!-- / Category edit form -->
 
                                         <?php require('../layouts/footer.php'); ?>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- / Basic Layout & Basic with Icons -->
                     </div>
                     <!-- / Content wrapper -->
                 </div>
-                <!-- / Layout container -->
+                <!-- / Layout page -->
             </div>
+            <!-- / Layout container -->
         </div>
-    </div>
-</body>
+        <!-- / Layout wrapper -->
+    </body>
+</html>

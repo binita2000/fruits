@@ -35,7 +35,7 @@
                     </g>
                 </svg>
             </span>
-            <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+            <span class="app-brand-text demo menu-text fw-bolder ms-2">Marketplace</span>
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -255,25 +255,7 @@
                 </li>
             </ul>
         </li>
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">category</div>
-            </a>
-
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="../categories/create.php" class="menu-link">
-                        <div data-i18n="Without menu">Add category</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="../categories/index.php" class="menu-link">
-                        <div data-i18n="Without navbar">Manage category</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
+        
 
        
         <li class="menu-item">
