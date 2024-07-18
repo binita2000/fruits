@@ -447,6 +447,25 @@
                     <h4 class="text-primary">Our Testimonial</h4>
                     <h1 class="display-5 mb-5 text-dark"><?php echo $testi ?></h1>
                 </div>
+<<<<<<< HEAD
+                <?php
+                $testimonial = "SELECT *FROM testimonial";
+                $t_result = mysqli_query($conn, $testimonial);
+                while ($data = mysqli_fetch_array($t_result)) {
+                    ?>
+                    <div class="owl-carousel testimonial-carousel">
+                        <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                            <div class="position-relative">
+
+                                <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                                    style="bottom: 30px; right: 0;"></i>
+                                <div class="mb-4 pb-4 border-bottom border-secondary">
+                                    <p>
+                                    <div class="message">
+                                        <p><?php echo $data['message'] ?></p>
+                                    </div>
+                                    </p>
+=======
                 <div class="owl-carousel testimonial-carousel">
                     <div class="testimonial-item img-border-radius bg-light rounded p-4">
                         <div class="position-relative">
@@ -461,21 +480,26 @@
                                 <div class="bg-secondary rounded">
                                     <img src="img/aarti1.jfif" class="img-fluid rounded"
                                         style="width: 100px; height: 100px;" alt="">
+>>>>>>> 8a9dcb1eba7d2d71b4c5823db6f847ce9d71311a
                                 </div>
-                                <div class="ms-4 d-block">
-                                    <h4 class="text-dark">Aarati Khadka</h4>
-                                    <p class="m-0 pb-3">Profession</p>
-                                    <div class="d-flex pe-5">
-                                        <i class="fas fa-star text-primary"></i>
-                                        <i class="fas fa-star text-primary"></i>
-                                        <i class="fas fa-star text-primary"></i>
-                                        <i class="fas fa-star text-primary"></i>
-                                        <i class="fas fa-star"></i>
+                                <div class="d-flex align-items-center flex-nowrap">
+                                    <div class="bg-secondary rounded">
+                                        <img src="<?php echo 'admin/uploads/' . $data['image']; ?>"
+                                            class="img-fluid w-100 rounded-top" alt="">
+                                    </div>
+                                    <div class="ms-4 d-block">
+                                        <h4 class="text-dark"><?php echo $data['name'] ?> </h4>
+                                        <p class="m-0 pb-3"><?php echo $data['position'] ?>Profession</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
+                    <?php
+                }
+                ?>
+=======
                     <div class="testimonial-item img-border-radius bg-light rounded p-4">
                         <div class="position-relative">
                             <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
@@ -533,8 +557,15 @@
                         </div>
                     </div>
                 </div>
+>>>>>>> 8a9dcb1eba7d2d71b4c5823db6f847ce9d71311a
             </div>
         </div>
-        <!-- Tastimonial End -->
+    </div>
+    </div>
+    <!-- Tastimonial End -->
 
+<<<<<<< HEAD
+    <?php require ('includes/footer.php'); ?>
+=======
         <?php require ('includes/footer.php'); ?>
+>>>>>>> 8a9dcb1eba7d2d71b4c5823db6f847ce9d71311a

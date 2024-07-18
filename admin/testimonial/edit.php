@@ -31,28 +31,38 @@
                                     </div>
                                     <div class="card-body">
                                         <?php
+                                        // Database connection
+                                   
+
+                                        $message = $image = $name = $position = $status = "";
+
                                         if (isset($_GET['id'])) {
                                             $id = $_GET['id'];
-                                            $select = "SELECT * FROM testimonials WHERE id='$id'";
-                                            $select_result = mysqli_query($conn, $select);
-                                            $select_data = mysqli_fetch_assoc($select_result);
+
+                                            $sql = "SELECT * FROM testimonial WHERE id=$id";
+                                            $result = mysqli_query($conn, $sql);
+                                            if ($row = mysqli_fetch_assoc($result)) {
+                                                $message = $row['message'];
+                                                $image = $row['image'];
+                                                $name = $row['name'];
+                                                $position = $row['position'];
+                                            }
                                         }
 
                                         if (isset($_POST['save'])) {
                                             $message = $_POST['message'];
                                             $name = $_POST['name'];
                                             $position = $_POST['position'];
+                                            $image = $_POST['image'];
 
-                                            if ($message != "" && $name != "" && $position != "") {
-                                                if (isset($id)) {
-                                                    $update = "UPDATE Testimonials SET message='$message', name='$name', position='$position' WHERE id='$id'";
-                                                    $result = mysqli_query($conn, $update);
-                                                    if ($result) {
-                                                        echo "<div class='alert alert-success'>Testimonial updated successfully.</div>";
-                                                        echo "<meta http-equiv=\"refresh\" content=\"2;URL=index.php\">";
-                                                    } else {
-                                                        echo "<div class='alert alert-danger'>Failed to update testimonial.</div>";
-                                                    }
+                                                             
+
+                                            if ($message != "" && $name != "" && $position != "" && $image != "" ) {
+                                                $update = "UPDATE testimonial SET message='$message', image='$image', name='$name', position='$position' WHERE id=$id";
+                                                $result = mysqli_query($conn, $update);
+                                                if ($result) {
+                                                    echo "<div class='alert alert-success'>Testimonial Updated Successfully</div>";
+                                                    echo "<meta http-equiv='refresh' content='2;URL=index.php'>";
                                                 } else {
                                                     echo "<div class='alert alert-danger'>Invalid testimonial ID.</div>";
                                                 }
@@ -79,32 +89,47 @@
                                                 <label class="col-form-label" for="name">Name</label>
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
-                                                        <span class="input-group-text"><i class="bx bx-user"></i></span>
-                                                        <input type="text" name="name" class="form-control" id="name" placeholder="Enter name" aria-label="Enter name" aria-describedby="basic-icon-default-name" required value="<?php echo isset($select_data['name']) ? $select_data['name'] : ''; ?>" />
+                                                        <span id="basic-icon-default-image2" class="input-group-text"></span>
+                                                        <input type="text" name="image" value="<?php echo $image; ?>" id="basic-icon-default-image" class="form-control" aria-label="Upload image" aria-describedby="basic-icon-default-image2" />
+                                                    </div>
+                                                    <img src="<?php echo '../uploads/'. $image; ?>" alt="Current Image" style="width: 100px; height: auto; margin-top: 10px;">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                                                <label class="col-form-label" for="basic-icon-default-name">Name</label>
+                                                <div class="col-sm-10">
+                                                    <div class="input-group input-group-merge">
+                                                        <span id="basic-icon-default-name2" class="input-group-text"></span>
+                                                        <input type="text" name="name" class="form-control" id="basic-icon-default-name" placeholder="Enter name" aria-label="Enter name" aria-describedby="basic-icon-default-name2" value="<?php echo $name; ?>" />
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class="col-form-label" for="position">Position</label>
+                                                <label class="col-form-label" for="basic-icon-default-position">position</label>
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
-                                                        <span class="input-group-text"><i class="bx bx-briefcase"></i></span>
-                                                        <input type="text" name="position" class="form-control" id="position" placeholder="Enter position" aria-label="Enter position" aria-describedby="basic-icon-default-position" required value="<?php echo isset($select_data['position']) ? $select_data['position'] : ''; ?>" />
+                                                        <span id="basic-icon-default-position2" class="input-group-text"></span>
+                                                        <input type="text" name="position" class="form-control" id="basic-icon-default-position" placeholder="Enter position" aria-label="Enter position" aria-describedby="basic-icon-default-position2" value="<?php echo $position; ?>" />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-12">
-                                                <button type="submit" name="save" class="btn btn-primary">Update Testimonial</button>
+
+                                           
+
+                                            <div class="col-sm-10">
+                                                <button type="submit" name="save" class="btn btn-primary">Submit</button>
                                             </div>
                                         </form>
+                                        <!-- / Content -->
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- / Content -->
-
+                <!-- / Layout container -->
                 <?php require('../layouts/footer.php'); ?>
             </div>
         </div>

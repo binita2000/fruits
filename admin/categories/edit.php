@@ -118,7 +118,12 @@
                                                 <label class="col-form-label" for="description">Description</label>
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
+<<<<<<< HEAD
+                                                        <span id="basic-icon-default-description2" class="input-group-text"></span>
+                                                        <textarea name="description" class="form-control" id="basic-icon-default-description" placeholder="Enter description" aria-label="Enter description" aria-describedby="basic-icon-default-description2"><th scope="row"><?php echo $i++; ?></textarea>
+=======
                                                         <textarea name="description" class="form-control" id="description" placeholder="Enter description"><?php echo $description; ?></textarea>
+>>>>>>> 8a9dcb1eba7d2d71b4c5823db6f847ce9d71311a
                                                     </div>
                                                 </div>
                                             </div>
