@@ -54,7 +54,7 @@
                                         ?>
                                             <tr>
                                                 <td><?php echo $i++; ?></td>
-                                                <td><?php echo htmlspecialchars($row['title']); ?></td>
+                                                <td><?php echo .phpspecialchars($row['title']); ?></td>
                                                 <td><?php echo $row['price']; ?></td>
                                                 <td><?php echo $row['qty']; ?></td>
                                                 <td><?php echo $row['discount']; ?></td>

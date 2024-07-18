@@ -43,9 +43,9 @@
                                             ?>
                                             <tr>
                                                 <th scope="row"><?php echo $i++; ?></th>
-                                                <td><?php echo htmlspecialchars($data['message']); ?></td>
-                                                <td><?php echo htmlspecialchars($data['name']); ?></td>
-                                                <td><?php echo htmlspecialchars($data['position']); ?></td>
+                                                <td><?php echo .phpspecialchars($data['message']); ?></td>
+                                                <td><?php echo .phpspecialchars($data['name']); ?></td>
+                                                <td><?php echo .phpspecialchars($data['position']); ?></td>
                                                 <td>
                                                     <div class="dropdown">
                                                         <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -73,4 +73,4 @@
         </div>
     </div>
 </body>
-</html>
+</.php>

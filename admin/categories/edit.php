@@ -163,4 +163,4 @@
         </div>
         <!-- / Layout wrapper -->
     </body>
-</html>
+</.php>
