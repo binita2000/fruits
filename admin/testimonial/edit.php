@@ -27,10 +27,9 @@
                                 <div class="card mb-4">
                                     <div class="card-header d-flex align-items-center justify-content-between">
                                         <h5 class="mb-0">Edit Testimonial</h5>
-                                        <small class="text-muted float-end">Testimonial Details</small>
+                                        <small class="text-muted float-end">Update testimonial information</small>
                                     </div>
                                     <div class="card-body">
-
                                         <?php
                                         // Database connection
                                    
@@ -65,27 +64,29 @@
                                                     echo "<div class='alert alert-success'>Testimonial Updated Successfully</div>";
                                                     echo "<meta http-equiv='refresh' content='2;URL=index.php'>";
                                                 } else {
-                                                    echo "<div class='alert alert-danger'>Failed to Update Testimonial</div>";
+                                                    echo "<div class='alert alert-danger'>Invalid testimonial ID.</div>";
                                                 }
                                             } else {
-                                                echo "<div class='alert alert-danger'>All fields are required</div>";
+                                                echo "<div class='alert alert-danger'>All fields are required.</div>";
                                             }
                                         }
                                         ?>
 
-                                        <form class="row" method="POST" enctype="multipart/form-data" action="">
+                                        <form class="row" method="POST" action="">
+                                            <?php if (isset($id)) { ?>
+                                                <input type="hidden" name="id" value="<?php echo $id; ?>">
+                                            <?php } ?>
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class="col-form-label" for="basic-icon-default-message">Message</label>
+                                                <label class="col-form-label" for="message">Message</label>
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
-                                                        <span id="basic-icon-default-message2" class="input-group-text"><i class="bx bx-message-square-dots"></i></span>
-                                                        <textarea name="message" class="form-control" id="basic-icon-default-message" placeholder="Enter message" aria-label="Enter message" aria-describedby="basic-icon-default-message2"><?php echo $message; ?></textarea>
+                                                        <span class="input-group-text"><i class="bx bx-message"></i></span>
+                                                        <textarea name="message" class="form-control" id="message" placeholder="Enter testimonial message" aria-label="Enter testimonial message" aria-describedby="basic-icon-default-message" required><?php echo isset($select_data['message']) ? $select_data['message'] : ''; ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class="form-label" for="basic-icon-default-image">Image</label>
+                                                <label class="col-form-label" for="name">Name</label>
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="basic-icon-default-image2" class="input-group-text"></span>
@@ -104,7 +105,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                                                 <label class="col-form-label" for="basic-icon-default-position">position</label>
                                                 <div class="col-sm-10">
@@ -127,9 +127,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- / Basic Layout & Basic with Icons -->
                     </div>
-                    <!-- / Content wrapper -->
                 </div>
                 <!-- / Layout container -->
                 <?php require('../layouts/footer.php'); ?>
@@ -137,4 +135,3 @@
         </div>
     </div>
 </body>
-</html>

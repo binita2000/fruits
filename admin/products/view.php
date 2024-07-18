@@ -115,7 +115,8 @@
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                                                 <label class="form-label" for="status">Status</label>
                                                 <div class="col-sm-10">
-                                                    <p><?php echo htmlspecialchars($data['status'] == 1) ? 'Active' : 'In-Active'; ?></p>
+                                                    <p><?php echo htmlspecialchars
+($data['status'] == 1) ? 'Active' : 'In-Active'; ?></p>
                                                 </div>
                                             </div>
 

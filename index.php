@@ -3,18 +3,23 @@
 <body>
 
     <?php
-    $settings = "SELECT *FROM settings";
+    $settings = "SELECT * FROM settings";
     $s_result = mysqli_query($conn, $settings);
-    while ($s_data = mysqli_fetch_array($s_result)) {
-        if ($s_data['site_key' == 'logo']) {
+
+    // Initialize variables to store individual data
+    $logo = '';
+    $testi = '';
+
+    while ($s_data = mysqli_fetch_assoc($s_result)) {
+        if ($s_data['site_key'] === 'logo') {
             $logo = $s_data['site_value'];
         }
-        if ($s_data['site_key' == 'testimonials_title']) {
+        if ($s_data['site_key'] === 'testi') {
             $testi = $s_data['site_value'];
         }
     }
-
     ?>
+
 
     <!-- Spinner Start -->
     <div id="spinner"
@@ -422,6 +427,7 @@
                     <h4 class="text-primary">Our Testimonial</h4>
                     <h1 class="display-5 mb-5 text-dark"><?php echo $testi ?></h1>
                 </div>
+<<<<<<< HEAD
                 <?php
                 $testimonial = "SELECT *FROM testimonial";
                 $t_result = mysqli_query($conn, $testimonial);
@@ -439,6 +445,22 @@
                                         <p><?php echo $data['message'] ?></p>
                                     </div>
                                     </p>
+=======
+                <div class="owl-carousel testimonial-carousel">
+                    <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                        <div class="position-relative">
+                            <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                                style="bottom: 30px; right: 0;"></i>
+                            <div class="mb-4 pb-4 border-bottom border-secondary">
+                                <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
+                                    industry's standard dummy text ever since the 1500s,
+                                </p>
+                            </div>
+                            <div class="d-flex align-items-center flex-nowrap">
+                                <div class="bg-secondary rounded">
+                                    <img src="img/aarti1.jfif" class="img-fluid rounded"
+                                        style="width: 100px; height: 100px;" alt="">
+>>>>>>> 8a9dcb1eba7d2d71b4c5823db6f847ce9d71311a
                                 </div>
                                 <div class="d-flex align-items-center flex-nowrap">
                                     <div class="bg-secondary rounded">
@@ -453,13 +475,77 @@
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
                     <?php
                 }
                 ?>
+=======
+                    <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                        <div class="position-relative">
+                            <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                                style="bottom: 30px; right: 0;"></i>
+                            <div class="mb-4 pb-4 border-bottom border-secondary">
+                                <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
+                                    industry's standard dummy text ever since the 1500s,
+                                </p>
+                            </div>
+                            <div class="d-flex align-items-center flex-nowrap">
+                                <div class="bg-secondary rounded">
+                                    <img src="img/bi.jfif" class="img-fluid rounded"
+                                        style="width: 100px; height: 100px;" alt="">
+                                </div>
+                                <div class="ms-4 d-block">
+                                    <h4 class="text-dark">Binita Neupane</h4>
+                                    <p class="m-0 pb-3">Profession</p>
+                                    <div class="d-flex pe-5">
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                        <div class="position-relative">
+                            <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                                style="bottom: 30px; right: 0;"></i>
+                            <div class="mb-4 pb-4 border-bottom border-secondary">
+                                <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
+                                    industry's standard dummy text ever since the 1500s,
+                                </p>
+                            </div>
+                            <div class="d-flex align-items-center flex-nowrap">
+                                <div class="bg-secondary rounded">
+                                    <img src="img/testimonial-1.jpg" class="img-fluid rounded"
+                                        style="width: 100px; height: 100px;" alt="">
+                                </div>
+                                <div class="ms-4 d-block">
+                                    <h4 class="text-dark">Client Name</h4>
+                                    <p class="m-0 pb-3">Profession</p>
+                                    <div class="d-flex pe-5">
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+>>>>>>> 8a9dcb1eba7d2d71b4c5823db6f847ce9d71311a
             </div>
         </div>
     </div>
     </div>
     <!-- Tastimonial End -->
 
+<<<<<<< HEAD
     <?php require ('includes/footer.php'); ?>
+=======
+        <?php require ('includes/footer.php'); ?>
+>>>>>>> 8a9dcb1eba7d2d71b4c5823db6f847ce9d71311a

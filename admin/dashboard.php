@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE .php>
 
 <!-- =========================================================
-* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
+* Sneat - Bootstrap 5 .php Admin Template - Pro | v1.0.0
 ==============================================================
 
-* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
+* Product Page: https://themeselection.com/products/sneat-bootstrap-.php-admin-template/
 * Created by: ThemeSelection
 * License: You must have a valid license purchased in order to legally use the theme for your project.
 * Copyright ThemeSelection (https://themeselection.com)
@@ -12,7 +12,7 @@
 =========================================================
  -->
 <!-- beautify ignore:start -->
-<html
+<.php
   lang="en"
   class="light-style layout-menu-fixed"
   dir="ltr"
@@ -27,7 +27,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Dashboard - Analytics | Sneat - Bootstrap 5 .php Admin Template - Pro</title>
 
     <meta name="description" content="" />
 
@@ -288,6 +288,35 @@
                 </li>
             </ul>
         </li>
+        <!-- testimonial
+          Section -->
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div data-i18n="Layouts">Testimonial
+
+                </div>
+            </a>
+
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="testimonial
+                    /create.php" class="menu-link">
+                        <div data-i18n="Without menu">Add Testimonial
+
+                        </div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="testimonial
+                    /index.php" class="menu-link">
+                        <div data-i18n="Without navbar">Manage Testimonial
+
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </li>
         <!-- Categories Section -->
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -311,7 +340,7 @@
 
        
         <li class="menu-item">
-            <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/" target="_blank" class="menu-link">
+            <a href="https://themeselection.com/demo/sneat-bootstrap-.php-admin-template/documentation/" target="_blank" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-file"></i>
                 <div data-i18n="Documentation">Documentation</div>
             </a>
@@ -354,11 +383,11 @@
                 <li class="nav-item lh-1 me-3">
                   <a
                     class="github-button"
-                    href="https://github.com/themeselection/sneat-html-admin-template-free"
+                    href="https://github.com/themeselection/sneat-.php-admin-template-free"
                     data-icon="octicon-star"
                     data-size="large"
                     data-show-count="true"
-                    aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
+                    aria-label="Star themeselection/sneat-.php-admin-template-free on GitHub"
                     >Star</a>
                   
                 </li>
@@ -981,14 +1010,14 @@
                   <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
 
                   <a
-                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
+                    href="https://themeselection.com/demo/sneat-bootstrap-.php-admin-template/documentation/"
                     target="_blank"
                     class="footer-link me-4"
                     >Documentation</a
                   >
 
                   <a
-                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
+                    href="https://github.com/themeselection/sneat-.php-admin-template-free/issues"
                     target="_blank"
                     class="footer-link me-4"
                     >Support</a
@@ -1012,7 +1041,7 @@
 
     <div class="buy-now">
       <a
-        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
+        href="https://themeselection.com/products/sneat-bootstrap-.php-admin-template/"
         target="_blank"
         class="btn btn-danger btn-buy-now"
         >Upgrade to Pro</a
@@ -1041,4 +1070,4 @@
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
-</html>
+</.php>
