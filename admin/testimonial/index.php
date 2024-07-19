@@ -21,49 +21,6 @@
                         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Testimonials /</span>Manage
                             Testimonials</h4>
 
-<<<<<<< HEAD
-            <!-- Basic Bootstrap Table -->
-            <div class="card">
-            <h5 class="card-header"><a class="btn btn-primary btn-sm " href="create.php" role="button"> Add testimonial</a></h5>
-            <div class="table-responsive text-nowrap">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>message</th>
-                      <th>image</th>
-                      <th>name</th>
-                      <th>profession</th>
-                      <th>action</th>
-                    
-                    </tr>
-                  </thead>
-                  <tbody class="table-border-bottom-0">
-                    <?php
-                    // Fetch testimonial data from the database
-                    $query = "SELECT * FROM testimonial";
-
-                    $result = mysqli_query($conn, $query);
-                    $i = 0;
-                    while ($row = mysqli_fetch_assoc($result)) {
-                    ?>
-                      <tr>
-                      <th scope="row"><?php echo $i++; ?></th>
-                        <td><?php echo $row['message'] ?> </td>
-                        <td><?php echo $row['image'] ?></td>
-                        <td><?php echo $row['name'] ?></td>
-                        <td><?php echo $row['position'] ?></td>
-                        
-                        <td>
-                          <div class='dropdown'>
-                          <button type='button' class='btn p-0 dropdown-toggle hide-arrow' data-bs-toggle='dropdown'>
-                              <i class='bx bx-dots-vertical-rounded'></i>
-                            </button>
-                            <div class='dropdown-menu'>
-                              <a class='dropdown-item' href='edit.php?id=<?php echo $row['id']; ?>'><i class='bx bx-edit-alt me-1'></i> Edit</a>
-                              <a class='dropdown-item' href='delete.php?id=<?php echo $row['id']; ?>'><i class='bx bx-trash me-1'></i> Delete</a>
-                              <a class='dropdown-item' href='view.php?id=<?php echo $row['id']; ?>'><i class='bx bx-eyes me-1'></i> View </a>
-=======
                         <!-- Basic Bootstrap Table -->
                         <div class="card">
                             <h5 class="card-header"><a class="btn btn-primary btn-sm" href="create.php" role="button">
@@ -75,13 +32,14 @@
                                             <th>#</th>
                                             <th>Message</th>
                                             <th>Name</th>
+                                            <th>image</th>
                                             <th>Position</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody class="table-border-bottom-0">
                                         <?php
-                                        $select = "SELECT * FROM testimonials ORDER BY id ASC";
+                                        $select = "SELECT * FROM testimonial ORDER BY id ASC";
                                         $select_result = mysqli_query($conn, $select);
                                         $i = 1;
                                         while ($data = mysqli_fetch_array($select_result)) {
@@ -91,6 +49,8 @@
                                                 <td><?php echo htmlspecialchars
                                                 ($data['message']); ?></td>
                                                 <td><?php echo htmlspecialchars($data['name']); ?></td>
+                                                <td><img src="<?php echo htmlspecialchars
+                                                ('../uploads/' . $data['image']); ?>" alt="Category Image" style="width: 100px; height: auto;"></td>
                                                 <td><?php echo htmlspecialchars($data['position']); ?></td>
                                                 <td>
                                                     <div class="dropdown">
@@ -99,13 +59,8 @@
                                                             <i class="bx bx-dots-vertical-rounded"></i>
                                                         </button>
                                                         <div class="dropdown-menu">
-                                                            <a class="dropdown-item"
-                                                                href="edit.php?id=<?php echo $data['id']; ?>"><i
-                                                                    class="bx bx-edit-alt me-1"></i> Edit</a>
-                                                            <a class="dropdown-item"
-                                                                href="delete.php?id=<?php echo $data['id']; ?>"
-                                                                onclick="return confirm('Do you want to delete this testimonial?')"><i
-                                                                    class="bx bx-trash me-1"></i> Delete</a>
+                                                            <a class="dropdown-item" href="edit.php?id=<?php echo $data['id']; ?>"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                                                            <a class="dropdown-item" href="delete.php?id=<?php echo $data['id']; ?>"onclick="return confirm('Do you want to delete this testimonial?')"><i class="bx bx-trash me-1"></i> Delete</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -113,7 +68,6 @@
                                         <?php } ?>
                                     </tbody>
                                 </table>
->>>>>>> 8a9dcb1eba7d2d71b4c5823db6f847ce9d71311a
                             </div>
                         </div>
                         <!--/ Basic Bootstrap Table -->
