@@ -77,41 +77,6 @@
                         <a class="btn-link" href="">Order History</a>
                     </div>
                 </div> -->
-<<<<<<< HEAD
-             <div class="col-lg-3 col-md-6">
-                 <div class="footer-item">
-                     <h4 class="text-light mb-3">Contact</h4>
-                     <p>Address:pokhara-17,Birauta</p>
-                     <p>Email:onlinemarketplace@gmail.com</p>
-                     <p>Phone:9811111111</p>
-                     <p>Payment Accepted</p>
-                     <img src="img/pay.png" class="img-fluid" alt="">
-                 </div>
-             </div>
-         </div>
-     </div>
- </div>
- <!-- Footer End -->
-
- <!-- Copyright Start -->
- <div class="container-fluid copyright bg-dark py-4">
-     <div class="container">
-         <div class="row">
-             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                 <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Online Market
-                         Place</a>, All right reserved.</span>
-             </div>
-             <div class="col-md-6 my-auto text-center text-md-end text-white">
-                 <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                 <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                 <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                 Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
-             </div>
-         </div>
-     </div>
- </div>
- <!-- Copyright End -->
-=======
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-item">
                         <h4 class="text-light mb-3">Contact</h4>
@@ -143,7 +108,6 @@
         </div>
     </div>
     <!-- Copyright End -->
->>>>>>> 8a9dcb1eba7d2d71b4c5823db6f847ce9d71311a
 
 
 
@@ -164,11 +128,5 @@
  <script src="js/main.js"></script>
  <script src="js/min.js"></script>
 
-<<<<<<< HEAD
- </body>
-
- </html>
-=======
 </body>
-</html>
->>>>>>> 8a9dcb1eba7d2d71b4c5823db6f847ce9d71311a
+</php>

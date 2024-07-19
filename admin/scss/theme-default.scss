@@ -49,7 +49,7 @@ $primary-color: #696cff;
   // menu item open(vertical) & hover (vertical & horizontal)
   .menu-inner .menu-item.open > .menu-link,
   .menu-inner .menu-item .menu-link:not(.active):hover {
-    .php:not(.layout-menu-collapsed) &,
+    html:not(.layout-menu-collapsed) &,
     .layout-menu-hover.layout-menu-collapsed & {
       background-color: rgba($black, 0.04);
     }

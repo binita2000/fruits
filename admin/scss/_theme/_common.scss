@@ -33,8 +33,8 @@
   @include template-float-label-theme($primary-color);
   @include template-svg-color($primary-color);
 
-  .php:not([dir='rtl']) .border-primary,
-  .php[dir='rtl'] .border-primary {
+  html:not([dir='rtl']) .border-primary,
+  html[dir='rtl'] .border-primary {
     border-color: $background !important;
   }
   a {

@@ -76,10 +76,10 @@ const webpackConfig = {
         use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'sass-loader' }]
       },
       {
-        test: /\..php$/,
+        test: /\.html$/,
         use: [
           {
-            loader: '.php-loader',
+            loader: 'html-loader',
             options: { minimize: true }
           }
         ]

@@ -54,8 +54,7 @@
                                         ?>
                                             <tr>
                                                 <td><?php echo $i++; ?></td>
-                                                <td><?php echo htmlspecialchars
-($row['title']); ?></td>
+                                                <td><?php echo htmlspecialchars($row['title']); ?></td>
                                                 <td><?php echo $row['price']; ?></td>
                                                 <td><?php echo $row['qty']; ?></td>
                                                 <td><?php echo $row['discount']; ?></td>
@@ -69,7 +68,7 @@
                                                         <div class='dropdown-menu'>
                                                             <a class='dropdown-item' href='edit.php?id=<?php echo $row['id']; ?>'><i class='bx bx-edit-alt me-1'></i> Edit</a>
                                                             <a class='dropdown-item' href='delete.php?id=<?php echo $row['id']; ?>'><i class='bx bx-trash me-1'></i> Delete</a>
-                                                            <a class='dropdown-item' href='view.php?id=<?php echo $row['id']; ?>'><i class='bx bx-eyes me-1'></i> View</a>
+                                                            <a class='dropdown-item' href='view.php?id=<?php echo $row['id']; ?>'><i class='bx bx-eye me-1'></i> View</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -92,3 +91,4 @@
         </div>
     </div>
 </body>
+</html>

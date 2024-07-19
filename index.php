@@ -2,7 +2,7 @@
 
 <body>
 
-    <<<<<<< HEAD <?php
+    <?php
                     $settings = "SELECT * FROM settings";
                     $s_result = mysqli_query($conn, $settings);
                     $logo = '';
@@ -32,7 +32,7 @@
                     $testi = $s_data['site_value'];
                 }
             }
-            ?>>>>>>>> 8a9dcb1eba7d2d71b4c5823db6f847ce9d71311a
+            ?>
 
 
         <!-- Spinner Start -->
@@ -243,7 +243,7 @@
                         <div class="col-lg-4 text-start">
                             <h1>Our Organic Products</h1>
                         </div>
-                        <!-- <div class="col-lg-8 text-end">
+                        <div class="col-lg-8 text-end">
                         <ul class="nav nav-pills d-inline-flex text-center mb-5">
                             <li class="nav-item">
                                 <a class="d-flex m-2 py-2 bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-1">
@@ -266,7 +266,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </div> -->
+                    </div>
                     </div>
                     <div class="tab-content">
                         <div id="tab-1" class="tab-pane fade show p-0 active">
