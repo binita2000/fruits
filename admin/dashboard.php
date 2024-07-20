@@ -1,4 +1,4 @@
-<!DOCTYPE .php>
+<!DOCTYPE html>
 
 <!-- =========================================================
 * Sneat - Bootstrap 5 .php Admin Template - Pro | v1.0.0
@@ -12,14 +12,14 @@
 =========================================================
  -->
 <!-- beautify ignore:start -->
-<.php
+<html>
   lang="en"
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
   data-assets-path="assets/"
   data-template="vertical-menu-template-free"
->
+
   <head>
     <meta charset="utf-8" />
     <meta
@@ -1070,4 +1070,4 @@
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
-</.php>
+<html>
