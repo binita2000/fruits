@@ -14798,7 +14798,7 @@ body {
 .ui-star > * {
   height: 1.1em;
   -webkit-user-drag: none;
-  -k.php-user-drag: none;
+  -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
   user-drag: none;
@@ -14964,7 +14964,7 @@ body {
   pointer-events: none;
   z-index: 2;
 }
-.php:not(.layout-menu-fixed) .menu-inner-shadow {
+html:not(.layout-menu-fixed) .menu-inner-shadow {
   display: none !important;
 }
 
@@ -15409,12 +15409,12 @@ body {
     padding-left: 16.25rem;
   }
 }
-.php:not(.layout-navbar-fixed):not(.layout-menu-fixed):not(.layout-menu-fixed-offcanvas) .layout-page,
-.php:not(.layout-navbar-fixed) .layout-content-navbar .layout-page {
+html:not(.layout-navbar-fixed):not(.layout-menu-fixed):not(.layout-menu-fixed-offcanvas) .layout-page,
+html:not(.layout-navbar-fixed) .layout-content-navbar .layout-page {
   padding-top: 0 !important;
 }
 
-.php:not(.layout-footer-fixed) .content-wrapper {
+html:not(.layout-footer-fixed) .content-wrapper {
   padding-bottom: 0 !important;
 }
 
@@ -15424,7 +15424,7 @@ body {
     top: 0 !important;
   }
 
-  .php:not(.layout-navbar-fixed) .layout-navbar-full .layout-page {
+  html:not(.layout-navbar-fixed) .layout-navbar-full .layout-page {
     padding-top: 0 !important;
   }
 }

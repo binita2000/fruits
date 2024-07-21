@@ -243,11 +243,11 @@
 }
 
 // Reset paddings (for non fixed entities)
-.php:not(.layout-navbar-fixed):not(.layout-menu-fixed):not(.layout-menu-fixed-offcanvas) .layout-page,
-.php:not(.layout-navbar-fixed) .layout-content-navbar .layout-page {
+html:not(.layout-navbar-fixed):not(.layout-menu-fixed):not(.layout-menu-fixed-offcanvas) .layout-page,
+html:not(.layout-navbar-fixed) .layout-content-navbar .layout-page {
   padding-top: 0 !important;
 }
-.php:not(.layout-footer-fixed) .content-wrapper {
+html:not(.layout-footer-fixed) .content-wrapper {
   padding-bottom: 0 !important;
 }
 
@@ -257,7 +257,7 @@
     top: 0 !important;
   }
 
-  .php:not(.layout-navbar-fixed) .layout-navbar-full .layout-page {
+  html:not(.layout-navbar-fixed) .layout-navbar-full .layout-page {
     padding-top: 0 !important;
   }
 }

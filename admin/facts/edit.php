@@ -82,6 +82,7 @@
                                                         <span id="icon-addon" class="input-group-text"><i class="bx bx-image"></i></span>
                                                         <input type="text" name="icon" class="form-control" id="icon" placeholder="Enter icon URL" aria-label="Enter icon URL" aria-describedby="icon-addon" value="<?php echo $icon; ?>" />
                                                     </div>
+                                                    
                                                 </div>
                                             </div>
 

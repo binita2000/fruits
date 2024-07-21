@@ -5,10 +5,21 @@
     <?php
     $settings = "SELECT * FROM settings";
     $s_result = mysqli_query($conn, $settings);
-
-    // Initialize variables to store individual data
     $logo = '';
     $testi = '';
+
+    while ($s_data = mysqli_fetch_array($s_result)) {
+        if ($s_data['site_key'] == 'logo') {
+            $logo = $s_data['site_value'];
+        }
+        if ($s_data['site_key'] == 'testimonials_title') {
+            $testi = $s_data['site_value'];
+        }
+    }
+    ?>
+    <?php
+    $settings = "SELECT * FROM settings";
+    $s_result = mysqli_query($conn, $settings);
 
     while ($s_data = mysqli_fetch_assoc($s_result)) {
         if ($s_data['site_key'] === 'logo') {
@@ -239,10 +250,11 @@
                     <div class="col-lg-4 text-start">
                         <h1>Our Organic Products</h1>
                     </div>
-                    <!-- <div class="col-lg-8 text-end">
+                    <div class="col-lg-8 text-end">
                         <ul class="nav nav-pills d-inline-flex text-center mb-5">
                             <li class="nav-item">
-                                <a class="d-flex m-2 py-2 bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-1">
+                                <a class="d-flex m-2 py-2 bg-light rounded-pill active" data-bs-toggle="pill"
+                                    href="#tab-1">
                                     <span class="text-dark" style="width: 130px;">All Products</span>
                                 </a>
                             </li>
@@ -262,7 +274,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </div> -->
+                    </div>
                 </div>
                 <div class="tab-content">
                     <div id="tab-1" class="tab-pane fade show p-0 active">
@@ -433,7 +445,7 @@
                 <?php
                 $testimonial = "SELECT *FROM testimonial";
                 $t_result = mysqli_query($conn, $testimonial);
-                while ($data = mysqli_fetch_array($t_result)) {
+                while ($t_data = mysqli_fetch_array($t_result)) {
                     ?>
 
                     <div class="owl-carousel testimonial-carousel">
@@ -443,32 +455,30 @@
                                     style="bottom: 30px; right: 0;"></i>
                                 <div class="mb-4 pb-4 border-bottom border-secondary">
                                     <div class="message">
-                                        <p><?php echo $data['message'] ?></p>
+                                        <p><?php echo $t_data['message'] ?></p>
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center flex-nowrap">
                                     <div class="bg-secondary rounded" style="max-width: 60px;">
-                                        <img src="<?php echo 'admin/uploads/' . $data['image']; ?>"
+                                        <img src="<?php echo 'admin/uploads/' . $t_data['image']; ?>"
                                             class="img-fluid rounded-top" alt="">
                                     </div>
                                     <div class="ms-2 d-block">
-                                        <h4 class="text-dark"><?php echo $data['name'] ?> </h4>
-                                        <p class="m-0 pb-3"><?php echo $data['position'] ?></p>
+                                        <h4 class="text-dark"><?php echo $t_data['name'] ?> </h4>
+                                        <p class="m-0 pb-3"><?php echo $t_data['position'] ?></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <?php ; ?>
+
 
                     <?php
                 }
                 ?>
             </div>
         </div>
-    </div>
-    </div>
-    <!-- Tastimonial End -->
+        <!-- Tastimonial End -->
 
-    <?php require ('includes/footer.php'); ?>
+        <?php require ('includes/footer.php'); ?>

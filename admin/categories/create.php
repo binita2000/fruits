@@ -119,7 +119,7 @@
                     </div>
                     <!-- / Content -->
 
-                    <?php require('../layouts/footer.php'); ?>
+                    <!-- <?php require('../layouts/footer.php'); ?> -->
                 </div>
                 <!-- / Content wrapper -->
             </div>

@@ -32,8 +32,8 @@ $cart_count = $cart_count_data['cart_count'] ?? 0;
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE php>
+<php lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Add to Cart</title>
@@ -45,4 +45,4 @@ $cart_count = $cart_count_data['cart_count'] ?? 0;
         <button type="submit" name="cart">Add to Cart</button>
     </form>
 </body>
-</html>
+</php>

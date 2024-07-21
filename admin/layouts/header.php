@@ -1,7 +1,8 @@
 
 <?php  require('../config/config.php'); ?>
-<!DOCTYPE .php>
-<.php
+<!DOCTYPE html
+>
+<html
   lang="en"
   class="light-style layout-menu-fixed"
   dir="ltr"
@@ -16,7 +17,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Tables - Basic Tables | Sneat - Bootstrap 5 .php Admin Template - Pro</title>
+    <title>Tables - Basic Tables | Sneat - Bootstrap 5 html Admin Template - Pro</title>
 
     <meta name="description" content="" />
 

@@ -1,24 +1,25 @@
-<?php require('../layouts/header.php'); ?>
+<?php require ('../layouts/header.php'); ?>
 
 <body>
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
             <!-- Menu -->
-            <?php require('../layouts/sidebar.php'); ?>
+            <?php require ('../layouts/sidebar.php'); ?>
             <!-- / Menu -->
 
             <!-- Layout container -->
             <div class="layout-page">
                 <!-- Navbar -->
-                <?php require('../layouts/navbar.php'); ?>
+                <?php require ('../layouts/navbar.php'); ?>
                 <!-- / Navbar -->
 
                 <!-- Content wrapper -->
                 <div class="content-wrapper">
                     <!-- Content -->
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Categories/</span> Edit Category</h4>
+                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Categories/</span> Edit Category
+                        </h4>
 
                         <!-- Basic Layout & Basic with Icons -->
                         <div class="row">
@@ -109,7 +110,8 @@
                                                 <label class="col-form-label" for="title">Title</label>
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
-                                                        <input type="text" name="title" class="form-control" id="title" placeholder="Enter title" value="<?php echo $title; ?>" />
+                                                        <input type="text" name="title" class="form-control" id="title"
+                                                            placeholder="Enter title" value="<?php echo $title; ?>" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -118,8 +120,9 @@
                                                 <label class="col-form-label" for="description">Description</label>
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
-                                                        <span id="basic-icon-default-description2" class="input-group-text"></span>
-                                                        <textarea name="description" class="form-control" id="basic-icon-default-description" placeholder="Enter description" aria-label="Enter description" aria-describedby="basic-icon-default-description2"><th scope="row"><?php echo $i++; ?></textarea>
+                                                        <textarea name="description" class="form-control"
+                                                            id="description"
+                                                            placeholder="Enter description"><?php echo $description; ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -129,7 +132,7 @@
                                                 <div class="col-sm-10">
                                                     <input type="file" name="image" class="form-control" id="image" />
                                                     <?php if (!empty($image)) { ?>
-                                                        <img src="<?php echo $image; ?>" alt="Category Image" style="max-width: 100px; margin-top: 10px;">
+                                                        <img src="<?php echo '../uploads/'. $image; ?>" alt="Current Image" style="width: 100px; height: auto; margin-top: 10px;">
                                                     <?php } ?>
                                                 </div>
                                             </div>
@@ -138,19 +141,24 @@
                                                 <label class="form-label" for="status">Status</label>
                                                 <div class="col-sm-10">
                                                     <select name="status" class="form-control" id="status" required>
-                                                        <option value="0" <?php if ($status == 0) echo "selected"; ?>>Inactive</option>
-                                                        <option value="1" <?php if ($status == 1) echo "selected"; ?>>Active</option>
+                                                        <option value="0" <?php if ($status == 0)
+                                                            echo "selected"; ?>>
+                                                            Inactive</option>
+                                                        <option value="1" <?php if ($status == 1)
+                                                            echo "selected"; ?>>
+                                                            Active</option>
                                                     </select>
                                                 </div>
                                             </div>
 
                                             <div class="col-sm-10">
-                                                <button type="submit" name="save" class="btn btn-primary">Submit</button>
+                                                <button type="submit" name="save"
+                                                    class="btn btn-primary">Submit</button>
                                             </div>
                                         </form>
                                         <!-- / Category edit form -->
 
-                                        <?php require('../layouts/footer.php'); ?>
+                                        <?php require ('../layouts/footer.php'); ?>
                                     </div>
                                 </div>
                             </div>
@@ -163,5 +171,6 @@
             <!-- / Layout container -->
         </div>
         <!-- / Layout wrapper -->
-    </body>
-</.php>
+</body>
+
+</html>
