@@ -30,11 +30,12 @@
                                 if (isset($_POST['save'])) {
                                     $message = $_POST['message'];
                                     $name = $_POST['name'];
+                                    $image = $_POST['image'];
                                     $position = $_POST['position'];
 
-                                    if ($message != "" && $name != "" && $position != "") {
+                                    if ($message != "" && $name != "" && $image != "" && $position != "" ) {
                                         // Perform SQL insertion
-                                        $insert = "INSERT INTO testimonials (message, name, position) VALUES ('$message', '$name', '$position')";
+                                        $insert = "INSERT INTO testimonial (message, name, image, position) VALUES ('$message', '$name', '$image', '$position')";
                                         $result = mysqli_query($conn, $insert);
 
                                         if ($result) {
@@ -62,6 +63,19 @@
                                     <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                                         <label class="col-form-label" for="name">Name</label>
                                         <input type="text" name="name" class="form-control" id="name" placeholder="Enter name" required>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                                        <label class="col-form-label" for="basic-icon-default-image">Image</label>
+                                        <div class="col-sm-10">
+                                            <div class="input-group input-group-merge">
+                                                <span id="basic-icon-default-image2" class="input-group-text"><i
+                                                        class="bx bx-image"></i></span>
+                                                <input type="text" name="image" class="form-control"
+                                                    id="basic-icon-default-image" placeholder="Enter image URL"
+                                                    aria-label="Enter image URL"
+                                                    aria-describedby="basic-icon-default-image2" />
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-sm-12 mb-3">

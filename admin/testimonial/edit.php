@@ -86,7 +86,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class="col-form-label" for="name">Name</label>
+                                                <label class="col-form-label" for="name">Image</label>
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="basic-icon-default-image2" class="input-group-text"></span>

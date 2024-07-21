@@ -32,13 +32,14 @@
                                             <th>#</th>
                                             <th>Message</th>
                                             <th>Name</th>
+                                            <th>image</th>
                                             <th>Position</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody class="table-border-bottom-0">
                                         <?php
-                                        $select = "SELECT * FROM testimonials ORDER BY id ASC";
+                                        $select = "SELECT * FROM testimonial ORDER BY id ASC";
                                         $select_result = mysqli_query($conn, $select);
                                         $i = 1;
                                         while ($data = mysqli_fetch_array($select_result)) {
@@ -48,6 +49,8 @@
                                                 <td><?php echo htmlspecialchars
                                                 ($data['message']); ?></td>
                                                 <td><?php echo htmlspecialchars($data['name']); ?></td>
+                                                <td><img src="<?php echo htmlspecialchars
+                                                ('../uploads/' . $data['image']); ?>" alt="Category Image" style="width: 100px; height: auto;"></td>
                                                 <td><?php echo htmlspecialchars($data['position']); ?></td>
                                                 <td>
                                                     <div class="dropdown">
@@ -56,13 +59,8 @@
                                                             <i class="bx bx-dots-vertical-rounded"></i>
                                                         </button>
                                                         <div class="dropdown-menu">
-                                                            <a class="dropdown-item"
-                                                                href="edit.php?id=<?php echo $data['id']; ?>"><i
-                                                                    class="bx bx-edit-alt me-1"></i> Edit</a>
-                                                            <a class="dropdown-item"
-                                                                href="delete.php?id=<?php echo $data['id']; ?>"
-                                                                onclick="return confirm('Do you want to delete this testimonial?')"><i
-                                                                    class="bx bx-trash me-1"></i> Delete</a>
+                                                            <a class="dropdown-item" href="edit.php?id=<?php echo $data['id']; ?>"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                                                            <a class="dropdown-item" href="delete.php?id=<?php echo $data['id']; ?>"onclick="return confirm('Do you want to delete this testimonial?')"><i class="bx bx-trash me-1"></i> Delete</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -82,3 +80,4 @@
         </div>
     </div>
 </body>
+</.php>

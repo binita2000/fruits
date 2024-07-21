@@ -410,70 +410,59 @@
             <!-- Fact Start -->
 
 
-            <!-- Tastimonial Start -->
+            <!-- Testimonial Start -->
             <div class="container-fluid testimonial py-5">
-                <div class="container py-5">
-                    <div class="testimonial-header text-center">
-                        <h4 class="text-primary">Our Testimonial</h4>
-                        <h1 class="display-5 mb-5 text-dark"><?php echo $testi ?></h1>
-                    </div>
-                    
-                    <div class="owl-carousel testimonial-carousel">
+    <div class="container py-5">
+        <div class="testimonial-header text-center">
+            <h4 class="text-primary">Our Testimonial</h4>
+            <h1 class="display-5 mb-5 text-dark"><?php echo $testi; ?></h1>
+        </div>
+        <?php
+           
+            $testimonials = "SELECT * FROM testimonial";
+            $test_result = mysqli_query($conn, $testimonials);
+
+            if ($test_result) {
+                ?>
+                <div class="owl-carousel testimonial-carousel">
+                    <?php
+                    while ($data = mysqli_fetch_array($test_result)) {
+                        ?>
                         <div class="testimonial-item img-border-radius bg-light rounded p-4">
                             <div class="position-relative">
                                 <i class="fa fa-quote-right fa-2x text-secondary position-absolute" style="bottom: 30px; right: 0;"></i>
                                 <div class="mb-4 pb-4 border-bottom border-secondary">
-                                    <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
-                                        industry's standard dummy text ever since the 1500s,
-                                    </p>
+                                    <p class="mb-0"><?php echo $data['message']; ?></p>
                                 </div>
                                 <div class="d-flex align-items-center flex-nowrap">
-                                    <div class="bg-secondary rounded">
-                                        <img src="img/aarti1.jfif" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="">
-                                    </div>
-                                    <div class="d-flex align-items-center flex-nowrap">
-                                        <div class="bg-secondary rounded">
-                                            <img src="<?php echo 'admin/uploads/' . $data['image']; ?>" class="img-fluid w-100 rounded-top" alt="">
-                                        </div>
-                                        <div class="ms-4 d-block">
-                                            <h4 class="text-dark"><?php echo $data['name'] ?> </h4>
-                                            <p class="m-0 pb-3"><?php echo $data['position'] ?></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-item img-border-radius bg-light rounded p-4">
-                            <div class="position-relative">
-                                <i class="fa fa-quote-right fa-2x text-secondary position-absolute" style="bottom: 30px; right: 0;"></i>
-                                <div class="mb-4 pb-4 border-bottom border-secondary">
-                                    <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
-                                        industry's standard dummy text ever since the 1500s,
-                                    </p>
-                                </div>
-                                <div class="d-flex align-items-center flex-nowrap">
-                                    <div class="bg-secondary rounded">
-                                        <img src="img/bi.jfif" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="">
+                                    <div class="bg-secondary rounded" style="width: 100px; height: 100px; overflow: hidden;">
+                                        <img src="<?php echo 'admin/uploads/' . $data['image']; ?>" class="img-fluid rounded" alt="">
                                     </div>
                                     <div class="ms-4 d-block">
-                                        <h4 class="text-dark">Binita Neupane</h4>
-                                        <p class="m-0 pb-3">Profession</p>
-                                        <div class="d-flex pe-5">
-                                            <i class="fas fa-star text-primary"></i>
-                                            <i class="fas fa-star text-primary"></i>
-                                            <i class="fas fa-star text-primary"></i>
-                                            <i class="fas fa-star text-primary"></i>
-                                            <i class="fas fa-star text-primary"></i>
-                                        </div>
+                                        <h4 class="text-dark"><?php echo $data['name']; ?></h4>
+                                        <p class="m-0 pb-3"><?php echo $data['position']; ?></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <?php
+                    }
+                    ?>
                 </div>
+                <?php
+            } else {
+                echo "No testimonials found.";
+            }
 
-            </div>
-        </div>
+            // Close connection
+            mysqli_close($conn);
+        ?>
+    </div>
+</div>
+
+<!-- Testimonial End -->
+
+                        
         <!-- Tastimonial End -->
 
         <?php require('includes/footer.php'); ?>
