@@ -1,24 +1,25 @@
-<?php require('../layouts/header.php'); ?>
+<?php require ('../layouts/header.php'); ?>
 
 <body>
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
             <!-- Menu -->
-            <?php require('../layouts/sidebar.php'); ?>
+            <?php require ('../layouts/sidebar.php'); ?>
             <!-- / Menu -->
 
             <!-- Layout container -->
             <div class="layout-page">
                 <!-- Navbar -->
-                <?php require('../layouts/navbar.php'); ?>
+                <?php require ('../layouts/navbar.php'); ?>
                 <!-- / Navbar -->
 
                 <!-- Content wrapper -->
                 <div class="content-wrapper">
                     <!-- Content -->
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Products /</span> Edit Product</h4>
+                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Products /</span> Edit Product
+                        </h4>
 
                         <?php
                         // Check if ID is set in URL
@@ -74,48 +75,57 @@
                         <!-- Basic Bootstrap Form -->
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="mb-0"><a class="btn btn-primary btn-sm" href="index.php" role="button">Manage Products</a></h5>
+                                <h5 class="mb-0"><a class="btn btn-primary btn-sm" href="index.php" role="button">Manage
+                                        Products</a></h5>
                             </div>
                             <div class="card-body">
                                 <form class="row" method="POST" action="">
                                     <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                                         <label class="col-form-label" for="title">Title</label>
-                                        <input type="text" name="title" class="form-control" id="title" placeholder="Enter title" value="<?php echo htmlspecialchars
-($title); ?>" required>
+                                        <input type="text" name="title" class="form-control" id="title"
+                                            placeholder="Enter title" value="<?php echo htmlspecialchars
+                                            ($title); ?>" required>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                                         <label class="col-form-label" for="description">Description</label>
-                                        <textarea name="description" class="form-control" id="description" placeholder="Enter description" rows="4" required><?php echo htmlspecialchars
-($description); ?></textarea>
+                                        <textarea name="description" class="form-control" id="description"
+                                            placeholder="Enter description" rows="4" required><?php echo htmlspecialchars
+                                            ($description); ?></textarea>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                                         <label class="col-form-label" for="image">Image URL</label>
-                                        <input type="text" name="image" class="form-control" id="image" placeholder="Enter image URL" value="<?php echo htmlspecialchars
-($image); ?>" required>
+                                        <input type="text" name="image" class="form-control" id="image"
+                                            placeholder="Enter image URL" value="<?php echo htmlspecialchars
+                                            ($image); ?>" required>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                                         <label class="col-form-label" for="price">Price</label>
-                                        <input type="text" name="price" class="form-control" id="price" placeholder="Enter price" value="<?php echo $price; ?>" required>
+                                        <input type="text" name="price" class="form-control" id="price"
+                                            placeholder="Enter price" value="<?php echo $price; ?>" required>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                                         <label class="col-form-label" for="qty">Quantity</label>
-                                        <input type="text" name="qty" class="form-control" id="qty" placeholder="Enter quantity" value="<?php echo $qty; ?>" required>
+                                        <input type="text" name="qty" class="form-control" id="qty"
+                                            placeholder="Enter quantity" value="<?php echo $qty; ?>" required>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                                         <label class="col-form-label" for="discount">Discount</label>
-                                        <input type="text" name="discount" class="form-control" id="discount" placeholder="Enter discount" value="<?php echo $discount; ?>" required>
+                                        <input type="text" name="discount" class="form-control" id="discount"
+                                            placeholder="Enter discount" value="<?php echo $discount; ?>" required>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                                         <label class="col-form-label" for="status">Status</label>
                                         <select name="status" class="form-control" id="status" required>
-                                            <option value="1" <?php echo ($status == 1) ? 'selected' : ''; ?>>Active</option>
-                                            <option value="0" <?php echo ($status == 0) ? 'selected' : ''; ?>>Inactive</option>
+                                            <option value="1" <?php echo ($status == 1) ? 'selected' : ''; ?>>Active
+                                            </option>
+                                            <option value="0" <?php echo ($status == 0) ? 'selected' : ''; ?>>Inactive
+                                            </option>
                                         </select>
                                     </div>
 
@@ -131,7 +141,7 @@
                 </div>
                 <!-- / Content wrapper -->
 
-                <?php require('../layouts/footer.php'); ?>
+                <?php require ('../layouts/footer.php'); ?>
             </div>
             <!-- / Layout container -->
         </div>

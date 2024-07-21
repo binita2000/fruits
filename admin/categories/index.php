@@ -1,17 +1,17 @@
-<?php require('../layouts/header.php'); ?>
+<?php require ('../layouts/header.php'); ?>
 
 <body>
   <!-- Layout wrapper -->
   <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
       <!-- Menu -->
-      <?php require('../layouts/sidebar.php'); ?>
+      <?php require ('../layouts/sidebar.php'); ?>
       <!-- / Menu -->
 
       <!-- Layout container -->
       <div class="layout-page">
         <!-- Navbar -->
-        <?php require('../layouts/navbar.php'); ?>
+        <?php require ('../layouts/navbar.php'); ?>
         <!-- / Navbar -->
 
         <!-- Content wrapper -->
@@ -22,7 +22,8 @@
 
             <!-- Basic Bootstrap Table -->
             <div class="card">
-              <h5 class="card-header"><a class="btn btn-primary btn-sm " href="create.php" role="button"> Add Category</a></h5>
+              <h5 class="card-header"><a class="btn btn-primary btn-sm " href="create.php" role="button"> Add
+                  Category</a></h5>
               <div class="table-responsive text-nowrap">
                 <table class="table">
                   <thead>
@@ -37,32 +38,35 @@
                   </thead>
                   <tbody class="table-border-bottom-0">
                     <?php
-                      $select = "SELECT * FROM categories ORDER BY title ASC";
-                      $select_result = mysqli_query($conn, $select);
-                      $i = 1;
-                      while ($data = mysqli_fetch_array($select_result)) {
-                    ?>
-                    <tr>
-                      <th scope="row"><?php echo $i++; ?></th>
-                      <td><?php echo htmlspecialchars
-($data['title']); ?></td>
-                      <td><?php echo htmlspecialchars
-($data['description']); ?></td>
-                      <td><img src="<?php echo htmlspecialchars
-('../uploads/'.$data['image']); ?>" alt="Category Image" style="width: 100px; height: auto;"></td>
-                      <td><?php echo ($data['status'] == 1) ? 'Active' : 'In-Active'; ?></td>
-                      <td>
-                        <div class="dropdown">
-                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                            <i class="bx bx-dots-vertical-rounded"></i>
-                          </button>
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="edit.php?id=<?php echo $data['id']; ?>"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                            <a class="dropdown-item" href="delete.php?id=<?php echo $data['id']; ?>" onclick=" return confirm('Do you want to delete this data??')"><i class="bx bx-trash me-1"></i> Delete</a>
+                    $select = "SELECT * FROM categories ORDER BY title ASC";
+                    $select_result = mysqli_query($conn, $select);
+                    $i = 1;
+                    while ($data = mysqli_fetch_array($select_result)) {
+                      ?>
+                      <tr>
+                        <th scope="row"><?php echo $i++; ?></th>
+                        <td><?php echo htmlspecialchars
+                        ($data['title']); ?></td>
+                        <td><?php echo htmlspecialchars
+                        ($data['description']); ?></td>
+                        <td><img src="<?php echo htmlspecialchars
+                        ('../uploads/' . $data['image']); ?>" alt="Category Image" style="width: 100px; height: auto;"></td>
+                        <td><?php echo ($data['status'] == 1) ? 'Active' : 'In-Active'; ?></td>
+                        <td>
+                          <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                              <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="edit.php?id=<?php echo $data['id']; ?>"><i
+                                  class="bx bx-edit-alt me-1"></i> Edit</a>
+                              <a class="dropdown-item" href="delete.php?id=<?php echo $data['id']; ?>"
+                                onclick=" return confirm('Do you want to delete this data??')"><i
+                                  class="bx bx-trash me-1"></i> Delete</a>
+                            </div>
                           </div>
-                        </div>
-                      </td>
-                    </tr>
+                        </td>
+                      </tr>
                     <?php } ?>
                   </tbody>
                 </table>
@@ -72,7 +76,7 @@
           </div>
           <!-- / Content -->
 
-          <?php require('../layouts/footer.php'); ?>
+          <?php require ('../layouts/footer.php'); ?>
         </div>
       </div>
     </div>

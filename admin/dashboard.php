@@ -19,7 +19,7 @@
   data-theme="theme-default"
   data-assets-path="assets/"
   data-template="vertical-menu-template-free"
->
+
   <head>
     <meta charset="utf-8" />
     <meta
@@ -1070,4 +1070,8 @@
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
+<<<<<<< HEAD
+<html>
+=======
 </html>
+>>>>>>> 958d98c21a26a59348384f41e3a6b5bcee342c31

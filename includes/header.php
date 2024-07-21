@@ -36,6 +36,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/345266dd67.js" crossorigin="anonymous"></script>
     <style>
         .fruite-img img {
             height: 200px;

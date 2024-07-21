@@ -69,8 +69,9 @@
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="icon-addon" class="input-group-text"><i class="bx bx-image"></i></span>
-                                                        <input type="text" name="icon" class="form-control" id="icon" placeholder="Enter icon URL" aria-label="Enter icon URL" aria-describedby="icon-addon" />
+                                                        <input type="text" name="icon" class="form-control" id="basic-icon-default-image" placeholder="Enter image URL" aria-label="Enter image URL" aria-describedby="basic-icon-default-image2" />
                                                     </div>
+                                                   
                                                 </div>
                                             </div>
 
