@@ -1,17 +1,17 @@
-<?php require('../layouts/header.php'); ?>
+<?php require ('../layouts/header.php'); ?>
 
 <body>
   <!-- Layout wrapper -->
   <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
       <!-- Menu -->
-      <?php require('../layouts/sidebar.php'); ?>
+      <?php require ('../layouts/sidebar.php'); ?>
       <!-- / Menu -->
 
       <!-- Layout container -->
       <div class="layout-page">
         <!-- Navbar -->
-        <?php require('../layouts/navbar.php'); ?>
+        <?php require ('../layouts/navbar.php'); ?>
         <!-- / Navbar -->
 
         <!-- Content wrapper -->
@@ -69,7 +69,7 @@
           </div>
           <!-- / Content -->
 
-          <?php require('../layouts/footer.php'); ?>
+          <?php require ('../layouts/footer.php'); ?>
         </div>
       </div>
     </div>

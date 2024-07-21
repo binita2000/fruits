@@ -1,13 +1,9 @@
 <!-- Register Modal -->
- <!DOCTYPE html>
- <html lang="en">
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    
-  </head>
+<?php require ('includes/header.php'); ?>
+
  <body>
+ <?php require ('includes/navbar.php'); ?>
+
     
      <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
          <div class="modal-dialog">
@@ -70,5 +66,8 @@
 </div>
 </div>
 <script src="./js/min.js"></script>
+
+<?php require ('includes/footer.php'); ?>
+
 </body>
 </html>

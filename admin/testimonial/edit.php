@@ -39,13 +39,13 @@
                                         if (isset($_GET['id'])) {
                                             $id = $_GET['id'];
 
-                                            $sql = "SELECT * FROM testimonial WHERE id=$id";
+                                            $sql = "SELECT * FROM testimonials WHERE id=$id";
                                             $result = mysqli_query($conn, $sql);
                                             if ($row = mysqli_fetch_assoc($result)) {
                                                 $message = $row['message'];
-                                                $image = $row['image'];
                                                 $name = $row['name'];
                                                 $position = $row['position'];
+                                                $image = $row['image'];
                                             }
                                         }
 
@@ -81,12 +81,12 @@
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i class="bx bx-message"></i></span>
-                                                        <textarea name="message" class="form-control" id="message" placeholder="Enter testimonial message" aria-label="Enter testimonial message" aria-describedby="basic-icon-default-message" required><?php echo isset($select_data['message']) ? $select_data['message'] : ''; ?></textarea>
+                                                        <textarea name="message"  class="form-control" id="message" placeholder="Enter testimonial message" aria-label="Enter testimonial message" aria-describedby="basic-icon-default-message" required> value="<?php echo $message; ?>"</textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label class="col-form-label" for="name">Image</label>
+                                                <label class="col-form-label" for="name">image</label>
                                                 <div class="col-sm-10">
                                                     <div class="input-group input-group-merge">
                                                         <span id="basic-icon-default-image2" class="input-group-text"></span>

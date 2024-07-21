@@ -1,43 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php require ('includes/header.php'); ?>
 
-    <head>
-        <meta charset="utf-8">
-        <title>Fruitables - Vegetable Website Template</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
-
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap" rel="stylesheet"> 
-
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-        <!-- Libraries Stylesheet -->
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-        <style>
-            .fruite-img img{
-                height: 300px;
-                object-fit: cover;
-            }
-            .description{
-                height: 150px;
-                object-fit: cover;
-            }
-        </style>
-    </head>
 
     <body>
 
@@ -49,52 +11,8 @@
 
 
         <!-- Navbar start -->
-        <div class="container-fluid fixed-top">
-            <div class="container topbar bg-primary d-none d-lg-block">
-                <div class="d-flex justify-content-between">
-                    <div class="top-info ps-2">
-                        <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">pokhara-17,Birauta</a></small>
-                        <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">onlinemarketplace@gmail.com</a></small>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="container px-0">
-                <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                    <a href="index.html" class="navbar-brand"><h1 class="text-primary display-6">Online Market Place</h1></a>
-                    <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                        <span class="fa fa-bars text-primary"></span>
-                    </button>
-                    <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
-                        <div class="navbar-nav mx-auto">
-                            <a href="index.html" class="nav-item nav-link">Home</a>
-                            <a href="shop.html" class="nav-item nav-link active">Shop</a>
-                            <a href="shop-detail.html" class="nav-item nav-link">Shop Detail</a>
-                            <!-- <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                    <a href="cart.html" class="dropdown-item">Cart</a>
-                                    <a href="checkout.html" class="dropdown-item">Checkout</a>
-                                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                    <a href="404.html" class="dropdown-item">404 Page</a>
-                                </div>
-                            </div> -->
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
-                        </div>
-                        <div class="d-flex m-3 me-0">
-                            <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
-                            <a href="#" class="position-relative me-4 my-auto">
-                                <i class="fa fa-shopping-bag fa-2x"></i>
-                                <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
-                            </a>
-                            <a href="#" class="my-auto" data-bs-toggle="modal" data-bs-target="#loginModal">
-                            <i class="fas fa-user fa-2x"></i>
-                            </a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
+        <?php require ('includes/navbar.php'); ?>
+
         <!-- Navbar End -->
 <!-- Login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -581,78 +499,4 @@
         <!-- Fruits Shop End-->
 
 
-        <div class="container-fluid bg-secondary text-light footer mt-5 pt-5">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-lg-3 col-md-6">
-                        <h4 class="text-white mb-4">Get In Touch</h4>
-                        <h4 class="text-primary mb-3">Fruitables</h4>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Pokhara, Nepal</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+977-98xxxxxxx</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>fruitables@gmail.com</p>
-                        <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h4 class="text-white mb-4">Quick Links</h4>
-                        <a class="btn btn-link" href="">About Us</a>
-                        <a class="btn btn-link" href="">Contact Us</a>
-                        <a class="btn btn-link" href="">Privacy Policy</a>
-                        <a class="btn btn-link" href="">Terms & Condition</a>
-                        <a class="btn btn-link" href="">FAQs & Help</a>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h4 class="text-white mb-4">Business Hours</h4>
-                        <p class="mb-1">Monday - Friday</p>
-                        <h6 class="text-light">08:00 am - 08:00 pm</h6>
-                        <p class="mb-1">Saturday - Sunday</p>
-                        <h6 class="text-light">09:00 am - 12:00 pm</h6>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h4 class="text-white mb-4">Newsletter</h4>
-                        <p>Stay updated with our latest news and offers. Subscribe to our newsletter.</p>
-                        <div class="position-relative w-100 mt-3">
-                            <input class="form-control bg-light border-light w-100 py-3 ps-4 pe-5" type="text"
-                                placeholder="Your email">
-                            <button type="button"
-                                class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid text-white border-top border-primary py-4">
-                <div class="container">
-                    <div class="row g-5">
-                        <div class="col-md-6 text-center text-md-start">
-                            <p>&copy; <a href="#">Fruitables</a>, All Right Reserved.</p>
-                        </div>
-                        <div class="col-md-6 text-center text-md-end">
-                            <p>Designed by <a href="https://htmlcodex.com">HTML Codex</a></p>
-                            <p>Distributed by <a href="https://themewagon.com">ThemeWagon</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
-
-        
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-    </body>
-
-</html>
+        <?php require ('includes/footer.php'); ?>

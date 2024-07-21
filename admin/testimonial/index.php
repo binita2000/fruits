@@ -34,6 +34,7 @@
                                             <th>Name</th>
                                             <th>image</th>
                                             <th>Position</th>
+                                            <th>Image</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
