@@ -31,10 +31,11 @@
                                     $message = $_POST['message'];
                                     $name = $_POST['name'];
                                     $position = $_POST['position'];
+                                    $image = $_POST['image'];
 
-                                    if ($message != "" && $name != "" && $position != "") {
+                                    if ($message != "" && $name != "" && $position != "" && $image != "") {
                                         // Perform SQL insertion
-                                        $insert = "INSERT INTO testimonials (message, name, position) VALUES ('$message', '$name', '$position')";
+                                        $insert = "INSERT INTO testimonials (message, name, position,image) VALUES ('$message', '$name', '$position' , '$image')";
                                         $result = mysqli_query($conn, $insert);
 
                                         if ($result) {
@@ -67,6 +68,11 @@
                                     <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                                         <label class="col-form-label" for="position">Position</label>
                                         <input type="text" name="position" class="form-control" id="position" placeholder="Enter position" required>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                                        <label class="col-form-label" for="image">Image URL</label>
+                                        <input type="text" name="image" class="form-control" id="image" placeholder="Enter image URL" required>
                                     </div>
 
                                     <div class="col-sm-12">

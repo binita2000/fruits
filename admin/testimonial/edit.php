@@ -39,13 +39,13 @@
                                         if (isset($_GET['id'])) {
                                             $id = $_GET['id'];
 
-                                            $sql = "SELECT * FROM testimonial WHERE id=$id";
+                                            $sql = "SELECT * FROM testimonials WHERE id=$id";
                                             $result = mysqli_query($conn, $sql);
                                             if ($row = mysqli_fetch_assoc($result)) {
                                                 $message = $row['message'];
-                                                $image = $row['image'];
                                                 $name = $row['name'];
                                                 $position = $row['position'];
+                                                $image = $row['image'];
                                             }
                                         }
 
