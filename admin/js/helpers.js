@@ -150,7 +150,7 @@ const Helpers = {
   },
 
   _findParent(el, cls) {
-    if ((el && el.tagName.toUpperCase() === 'BODY') || el.tagName.toUpperCase() === '.php') return null
+    if ((el && el.tagName.toUpperCase() === 'BODY') || el.tagName.toUpperCase() === 'HTML') return null
     el = el.parentNode
     while (el && el.tagName.toUpperCase() !== 'BODY' && !el.classList.contains(cls)) {
       el = el.parentNode
@@ -598,7 +598,7 @@ const Helpers = {
   isRtl() {
     return (
       document.querySelector('body').getAttribute('dir') === 'rtl' ||
-      document.querySelector('.php').getAttribute('dir') === 'rtl'
+      document.querySelector('html').getAttribute('dir') === 'rtl'
     )
   },
 

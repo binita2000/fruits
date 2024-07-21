@@ -66,8 +66,8 @@ const serveTasks = function () {
   });
   watch([
     // ? You can change add/remove files/folders watch paths in below array
-    '.php/**/*..php',
-    '.php-starter/**/*..php',
+    'html/**/*.html',
+    'html-starter/**/*.html',
     'assets/vendor/css/*.css',
     'assets/vendor/css/rtl/*.css',
     'assets/css/*.css',

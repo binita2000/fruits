@@ -3,8 +3,8 @@
 
 
 
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE php>
+<php lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -36,6 +36,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/345266dd67.js" crossorigin="anonymous"></script>
     <style>
         .fruite-img img {
             height: 200px;

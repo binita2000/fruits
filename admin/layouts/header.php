@@ -1,8 +1,8 @@
 
 <?php  require('../config/config.php'); ?>
-<!DOCTYPE .html
+<!DOCTYPE html
 >
-<html >
+<html
   lang="en"
   class="light-style layout-menu-fixed"
   dir="ltr"
@@ -17,7 +17,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Tables - Basic Tables | Sneat - Bootstrap 5 .php Admin Template - Pro</title>
+    <title>Tables - Basic Tables | Sneat - Bootstrap 5 html Admin Template - Pro</title>
 
     <meta name="description" content="" />
 
@@ -47,6 +47,8 @@
 
     <!-- Helpers -->
     <script src="../assets/vendor/js/helpers.js"></script>
+
+    <script src="https://kit.fontawesome.com/345266dd67.js" crossorigin="anonymous"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
