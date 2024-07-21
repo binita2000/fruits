@@ -16,13 +16,13 @@
                 $s_result=mysqli_query($conn, $settings);
                 while($s_data= mysqli_fetch_array($s_result)){
                     if($s_data['site_key'=='logo']){
-                        $logo = $s_data['site_value'];
+                        $logo=$s_data['site_value'];
                     }
                 }
                 
                 ?>
                 <a href="index.php" class="navbar-brand">
-                    <h1 class="text-primary display-6"><img src="<?php echo '../admin/uploads/'.$logo ; ?>" alt="" width="100" height="40"></h1>
+                    <h1 class="text-primary display-6"><img src="<?php echo '../admin/uploads/'.$logo; ?>" alt="" width="100" height="40"></h1>
                 </a>
                 <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">

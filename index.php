@@ -277,6 +277,7 @@
                         <div class="row g-4">
                             <div class="owl-carousel vegetable-carousel justify-content-center">
 
+<<<<<<< HEAD
                                 <?php
                                 $product = "SELECT *FROM products";
                                 $category_result = mysqli_query($conn, $product);
@@ -285,6 +286,130 @@
                                     <div class="border border-primary rounded position-relative vesitable-item">
                                         <div class="fruite-img">
                                             <img src="<?php echo 'admin/uploads/' . $category_data['image']; ?>" class="img-fluid w-100 rounded-top" alt="">
+=======
+
+
+
+            <!-- Vesitable Shop Start-->
+            <div class="container-fluid vesitable py-5">
+                <div class="container py-5">
+                    <h1 class="mb-0">Fresh Organic Products</h1>
+                    <div class="owl-carousel vegetable-carousel justify-content-center">
+
+                        <?php
+                        $categories = "SELECT *FROM categories";
+                        $result = mysqli_query($conn, $categories);
+                        while ($data = mysqli_fetch_array($result)) {
+                        ?>
+                            <div class="border border-primary rounded position-relative vesitable-item">
+                                <div class="fruite-img">
+                                    <img src="<?php echo 'admin/uploads/' . $data['image']; ?>" class="img-fluid w-100 rounded-top" alt="">
+                                </div>
+                                <div class="p-4 rounded-bottom">
+                                    <h4><?php echo $data['title'] ?></h4>
+                                    <div class="description">
+                                        <p><?php echo $data['description'] ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                        }
+
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <!-- Vesitable Shop End -->
+
+
+            <!-- Vesitable Shop Start-->
+            <div class="container-fluid vesitable pb-5">
+                <div class="container py-5">
+                    <h1 class="mb-0">Categories</h1>
+                    <div class="owl-carousel vegetable-carousel justify-content-center">
+
+                        <?php
+                        $categories = "SELECT *FROM categories";
+                        $result = mysqli_query($conn, $categories);
+                        while ($data = mysqli_fetch_array($result)) {
+                        ?>
+                            <div class="border border-primary rounded position-relative vesitable-item">
+                                <div class="fruite-img">
+                                    <img src="<?php echo 'admin/uploads/' . $data['image']; ?>" class="img-fluid w-100 rounded-top" alt="">
+                                </div>
+                                <div class="p-4 rounded-bottom">
+                                    <h4><?php echo $data['title'] ?></h4>
+                                    <div class="description">
+                                        <p><?php echo $data['description'] ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                        }
+
+                        ?>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Vesitable Shop End -->
+
+
+
+
+            <!-- Fact Start -->
+            <!-- Fact Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="bg-light p-5 rounded">
+                <div class="row g-4 justify-content-center">
+                    <?php
+                    $facts = "SELECT *FROM facts";
+                    $fact = mysqli_query($conn, $facts);
+                    while ($fact_data = mysqli_fetch_array($fact)) {
+                    ?>
+                        <div class="col-md-6 col-lg-6 col-xl-3">
+                            <div class="counter bg-white rounded p-5">
+                                <i class="<?php echo $fact_data['icon']; ?>"></i>
+                                <h4><?php echo $fact_data['title']; ?></h4>
+                                <h1><?php echo $fact_data['number']; ?></h1>
+                            </div>
+                        </div>
+                    <?php }
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fact Start -->
+            <!-- Fact Start -->
+
+
+            <!-- Tastimonial Start -->
+            <div class="container-fluid testimonial py-5">
+                <div class="container py-5">
+                    <div class="testimonial-header text-center">
+                        <h4 class="text-primary">Our Testimonial</h4>
+                        <h1 class="display-5 mb-5 text-dark"><?php echo $testi ?></h1>
+                    </div>
+                    
+                    <div class="owl-carousel testimonial-carousel">
+                        <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                            <div class="position-relative">
+                                <i class="fa fa-quote-right fa-2x text-secondary position-absolute" style="bottom: 30px; right: 0;"></i>
+                                <div class="mb-4 pb-4 border-bottom border-secondary">
+                                    <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
+                                        industry's standard dummy text ever since the 1500s,
+                                    </p>
+                                </div>
+                                <div class="d-flex align-items-center flex-nowrap">
+                                    <div class="bg-secondary rounded">
+                                        <img src="img/aarti1.jfif" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="">
+                                    </div>
+                                    <div class="d-flex align-items-center flex-nowrap">
+                                        <div class="bg-secondary rounded">
+                                            <img src="<?php echo 'admin/uploads/' . $data['image']; ?>" class="img-fluid w-100 rounded-top" alt="">
+>>>>>>> 7a2530a6d873a8cb1f7865d8d30e4c4028e3b186
                                         </div>
                                         <div class="p-4 rounded-bottom">
                                             <h4><?php echo $category_data['title'] ?></h4>
