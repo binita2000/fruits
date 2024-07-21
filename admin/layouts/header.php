@@ -48,6 +48,8 @@
     <!-- Helpers -->
     <script src="../assets/vendor/js/helpers.js"></script>
 
+    <script src="https://kit.fontawesome.com/345266dd67.js" crossorigin="anonymous"></script>
+
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     ipt src="../assets/js/config.js"></script>
