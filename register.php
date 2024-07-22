@@ -1,5 +1,6 @@
 <!-- Register Modal -->
 <?php require ('includes/header.php'); ?>
+<?php require ('admin/config/config.php'); ?>
 
  <body>
  <?php require ('includes/navbar.php'); ?>

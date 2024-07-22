@@ -38,11 +38,7 @@
 
                                     if ($message != "" && $name != "" && $position != "" && $image != "") {
                                         // Perform SQL insertion
-<<<<<<< HEAD
-                                        $insert = "INSERT INTO testimonials (message, name, position,image) VALUES ('$message', '$name', '$position' , '$image')";
-=======
-                                        $insert = "INSERT INTO testimonial (message, name,image, position) VALUES ('$message', '$name','$image', '$position')";
->>>>>>> f12faa922b71dd57511a9c5de3b479d285b7f311
+                                        $insert = "INSERT INTO testimonial (message, name,position,image) VALUES ('$message', '$name','$position', '$image')";
                                         $result = mysqli_query($conn, $insert);
 
                                         if ($result) {

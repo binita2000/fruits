@@ -1,5 +1,12 @@
 
-<?php  require('../config/config.php'); ?>
+<?php  require('../config/config.php');
+session_start();
+if(!isset($_SESSION['email'])){
+  echo "User not fund";
+  echo "<meta http-equiv=\"refresh\" content=\"0;URL=../index.php\">";
+
+}
+?>
 <!DOCTYPE html
 >
 <html

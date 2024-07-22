@@ -47,23 +47,20 @@
             </div>
             <?php
             if (isset($_POST['register'])) {
-                $name = $_POST['name'];
                 $username = $_POST['username'];
                 $email = $_POST['email'];
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-                if ($name != "" && $username != "" && $email != "" && $password != "") {
+                if ( $username != "" && $email != "" && $password != "") {
                     // Check for duplicate email or username
-                    $duplicate_query = $conn->prepare("SELECT * FROM users WHERE email = ? OR username = ?");
-                    $duplicate_query->bind_param("ss", $email, $username);
-                    $duplicate_query->execute();
-                    $result = $duplicate_query->get_result();
+                    $duplicate_query = "SELECT * FROM users WHERE email = '$email'";
+                    $result= mysqli_query($conn, $duplicate_query);
 
                     if ($result->num_rows == 0) {
                         // Insert the new user
-                        $insert_query = $conn->prepare("INSERT INTO users (name, username, email, password) VALUES (?, ?, ?, ?)");
-                        $insert_query->bind_param("ssss", $name, $username, $email, $password);
-                        if ($insert_query->execute()) {
+                        $insert_query = "INSERT INTO users (username, email, password) VALUES ( '$username', '$email', '$password')";
+                        $insert_result= mysqli_query($conn, $insert_query);
+                        if ($insert_result) {
                             echo "<div class='alert alert-success'>Data is submitted</div>";
                             echo "<meta http-equiv='refresh' content='2;URL=index.php'>";
                         } else {
@@ -80,7 +77,7 @@
              <h4 class="mb-2">Adventure starts here 🚀</h4>
               <p class="mb-4">Make your app management easy and fun!</p>
 
-              <form id="formAuthentication" class="mb-3" action="index.php" method="POST">
+              <form id="formAuthentication" class="mb-3" action="#" method="POST">
                 <div class="mb-3">
                   <label for="username" class="form-label">Username</label>
                   <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" autofocus />
@@ -104,68 +101,17 @@
                     </label>
                   </div>
                 </div>
-                <button class="btn btn-primary d-grid w-100">Sign up</button>
+                <button class="btn btn-primary d-grid w-100" name="register">Sign up</button>
               </form>
 
               <p class="text-center">
                 <span>Already have an account?</span>
-                <a href="../auth/login.php">
+                <a href="index.php">
                   <span>Sign in instead</span>
                 </a>
               </p>
             </div>
-            <?php
-            if (isset($_POST['register'])) {
-                $name = $_POST['name'];
-                $username = $_POST['username'];
-                $email = $_POST['email'];
-                $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-
-                if ($name != "" && $username != "" && $email != "" && $password != "") {
-                    // Check for duplicate email or username
-                    $duplicate_query = $conn->prepare("SELECT * FROM users WHERE email = ? OR username = ?");
-                    $duplicate_query->bind_param("ss", $email, $username);
-                    $duplicate_query->execute();
-                    $result = $duplicate_query->get_result();
-
-                    if ($result->num_rows == 0) {
-                        // Insert the new user
-                        $insert_query = $conn->prepare("INSERT INTO users (name, username, email, password) VALUES (?, ?, ?, ?)");
-                        $insert_query->bind_param("ssss", $name, $username, $email, $password);
-                        if ($insert_query->execute()) {
-                            echo "<div class='alert alert-success'>Data is submitted</div>";
-                            echo "<meta http-equiv='refresh' content='2;URL=index.php'>";
-                        } else {
-                            echo "<div class='alert alert-danger'>Error: " . $conn->error . "</div>";
-                        }
-                    } else {
-                        echo "<div class='alert alert-danger'>Email or Username already exists</div>";
-                    }
-                } else {
-                    echo "<div class='alert alert-danger'>All fields are required</div>";
-                }
-            }
-            ?>
-            <form action="" method="POST" enctype="multipart/form-data">
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Name</label>
-                    <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Username</label>
-                    <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
-                </div>
-                <button type="submit" class="btn btn-primary btn-sm" name="register">Submit</button>
-                <p> Don't have an account <a href="index.php">Sign In</a></p>
-            </form>
+           
         </div>
       </div>
     </div>

@@ -44,7 +44,7 @@
                                             $username = $_POST['username'];
                                             $phone = $_POST['phone'];
                                             $email = $_POST['email'];
-                                            $password = $_POST['password'];
+                                            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                                             $role = $_POST['role'];
                                             $status = $_POST['status'];
 

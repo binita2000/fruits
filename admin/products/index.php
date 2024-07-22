@@ -32,6 +32,7 @@
                                             <th>#</th>
                                             <th>Title</th>
                                             <th>Price</th>
+                                            <th>image</th>
                                             <th>Qty</th>
                                             <th>Discount</th>
                                             <th>Total</th>
@@ -48,6 +49,7 @@
                                         while ($row = mysqli_fetch_assoc($result)) {
                                             // Calculate total price after discount
                                             $price = $row['price'];
+                                            $qty = $row['image'];
                                             $qty = $row['qty'];
                                             $discount = $row['discount'];
                                             $total = $price * $qty - $discount;
@@ -56,6 +58,7 @@
                                                 <td><?php echo $i++; ?></td>
                                                 <td><?php echo htmlspecialchars($row['title']); ?></td>
                                                 <td><?php echo $row['price']; ?></td>
+                                                <td><?php echo $row['image']; ?></td>
                                                 <td><?php echo $row['qty']; ?></td>
                                                 <td><?php echo $row['discount']; ?></td>
                                                 <td><?php echo $total; ?></td>

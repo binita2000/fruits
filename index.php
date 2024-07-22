@@ -17,7 +17,7 @@
         }
     }
     ?>
-    
+
 
 
     <!-- Spinner Start -->
@@ -130,6 +130,23 @@
 
 
     <!-- Modal Search Start -->
+    <!-- <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center">
+                        <div class="input-group w-75 mx-auto d-flex">
+                            <input type="search" class="form-control p-3" placeholder="keywords"
+                                aria-describedby="search-icon-1">
+                            <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
     <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content rounded-0">
@@ -138,15 +155,19 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body d-flex align-items-center">
-                    <div class="input-group w-75 mx-auto d-flex">
-                        <input type="search" class="form-control p-3" placeholder="keywords"
-                            aria-describedby="search-icon-1">
-                        <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
-                    </div>
+                    <form id="searchForm" action="search_results.php" method="GET" class="w-75 mx-auto d-flex">
+                        <div class="input-group">
+                            <input type="search" class="form-control p-3" placeholder="keywords" name="query"
+                                aria-describedby="search-icon-1">
+                            <button type="submit" id="search-icon-1" class="input-group-text p-3"><i
+                                    class="fa fa-search"></i></button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- Modal Search End -->
 
 
@@ -420,40 +441,42 @@
 
         <!-- Tastimonial Start -->
         <div id="testimonialCarousel" class="carousel slide">
-    <div class="carousel-inner">
-        <?php
-        $testimonials = "SELECT * FROM testimonials";
-        $result = mysqli_query($conn, $testimonials);
-        $first = true;
+            <div class="carousel-inner">
+                <?php
+                $testimonials = "SELECT * FROM testimonials";
+                $result = mysqli_query($conn, $testimonials);
+                $first = true;
 
-        while ($data = mysqli_fetch_array($result)) {
-            $activeClass = $first ? ' active' : ''; // Add 'active' class to the first item
-            $first = false; // Only the first item should be active
-            ?>
-            <div class="carousel-item<?php echo $activeClass; ?>">
-                <div class="d-flex justify-content-center">
-                    <div class="border border-primary rounded p-4 text-center">
-                        <img src="<?php echo 'admin/uploads/' . $data['image']; ?>"
-                             class="img-fluid rounded-circle mb-3" alt="Testimonial Image" style="max-width: 150px;">
-                        <p class="fs-4"><?php echo $data['message']; ?></p>
-                        <h5><?php echo $data['name']; ?></h5>
-                        <p class="text-muted"><?php echo $data['position']; ?></p>
+                while ($data = mysqli_fetch_array($result)) {
+                    $activeClass = $first ? ' active' : ''; // Add 'active' class to the first item
+                    $first = false; // Only the first item should be active
+                    ?>
+                    <div class="carousel-item<?php echo $activeClass; ?>">
+                        <div class="d-flex justify-content-center">
+                            <div class="border border-primary rounded p-4 text-center">
+                                <img src="<?php echo 'admin/uploads/' . $data['image']; ?>"
+                                    class="img-fluid rounded-circle mb-3" alt="Testimonial Image" style="max-width: 150px;">
+                                <p class="fs-4"><?php echo $data['message']; ?></p>
+                                <h5><?php echo $data['name']; ?></h5>
+                                <p class="text-muted"><?php echo $data['position']; ?></p>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <?php
+                }
+                ?>
             </div>
-            <?php
-        }
-        ?>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
 
 
         <!-- Tastimonial End -->

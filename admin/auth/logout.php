@@ -2,6 +2,6 @@
 
 session_start();
 session_destroy();
-echo "<meta http-equiv=\"refresh\" content=\"0;URL=../admin/index.php?msg=error\">";
+echo "<meta http-equiv=\"refresh\" content=\"0;URL=../index.php?msg=error\">";
 
 ?>
