@@ -479,6 +479,62 @@
         </div>
 
 
+<<<<<<< HEAD
+            <!-- Testimonial Start -->
+            <div class="container-fluid testimonial py-5">
+    <div class="container py-5">
+        <div class="testimonial-header text-center">
+            <h4 class="text-primary">Our Testimonial</h4>
+            <h1 class="display-5 mb-5 text-dark"><?php echo $testi; ?></h1>
+        </div>
+        <?php
+           
+            $testimonials = "SELECT * FROM testimonial";
+            $test_result = mysqli_query($conn, $testimonials);
+
+            if ($test_result) {
+                ?>
+                <div class="owl-carousel testimonial-carousel">
+                    <?php
+                    while ($data = mysqli_fetch_array($test_result)) {
+                        ?>
+                        <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                            <div class="position-relative">
+                                <i class="fa fa-quote-right fa-2x text-secondary position-absolute" style="bottom: 30px; right: 0;"></i>
+                                <div class="mb-4 pb-4 border-bottom border-secondary">
+                                    <p class="mb-0"><?php echo $data['message']; ?></p>
+                                </div>
+                                <div class="d-flex align-items-center flex-nowrap">
+                                    <div class="bg-secondary rounded" style="width: 100px; height: 100px; overflow: hidden;">
+                                        <img src="<?php echo 'admin/uploads/' . $data['image']; ?>" class="img-fluid rounded" alt="">
+                                    </div>
+                                    <div class="ms-4 d-block">
+                                        <h4 class="text-dark"><?php echo $data['name']; ?></h4>
+                                        <p class="m-0 pb-3"><?php echo $data['position']; ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                </div>
+                <?php
+            } else {
+                echo "No testimonials found.";
+            }
+
+            // Close connection
+            mysqli_close($conn);
+        ?>
+    </div>
+</div>
+
+<!-- Testimonial End -->
+
+                        
+=======
+>>>>>>> 56b3997f118f57cc3e031d7b5fe142252e9ec60e
         <!-- Tastimonial End -->
 
         <?php require ('includes/footer.php'); ?>
